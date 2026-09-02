@@ -1,0 +1,346 @@
+@import "tailwindcss";
+@import "../styles/tokens.primitive.css";
+@import "../styles/tokens.semantic.css";
+@import "../styles/tokens.component.css";
+
+@theme inline {
+  --color-page: var(--bg-page);
+  --color-subtle: var(--bg-subtle);
+  --color-muted-bg: var(--bg-muted);
+  --color-soft: var(--bg-soft);
+  --color-inverse: var(--bg-inverse);
+
+  --color-ink: var(--text-primary);
+  --color-ink-secondary: var(--text-secondary);
+  --color-ink-muted: var(--text-muted);
+  --color-ink-inverse: var(--text-inverse);
+  --color-ink-inverse-muted: var(--text-inverse-muted);
+
+  --color-line: var(--border-default);
+  --color-line-strong: var(--border-strong);
+  --color-line-inverse: var(--border-inverse);
+
+  --color-brand: var(--action-primary);
+  --color-brand-hover: var(--action-hover);
+  --color-brand-focus: var(--action-focus);
+  --color-brand-soft: var(--action-soft);
+
+  --color-info: var(--status-info);
+  --color-neutral: var(--status-neutral);
+
+  --color-nav: var(--nav-bg);
+  --color-card: var(--card-bg);
+  --color-footer: var(--footer-bg);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
+
+  --radius-md: var(--radius-control);
+  --radius-lg: var(--radius-card);
+  --radius-xl: var(--radius-surface);
+  --radius-full: var(--radius-pill);
+}
+
+@keyframes emfi-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.emfi-marquee-track {
+  animation: emfi-marquee 28s linear infinite;
+}
+
+.emfi-drift-a {
+  animation: emfi-drift-a 16s ease-in-out infinite;
+}
+
+.emfi-drift-b {
+  animation: emfi-drift-b 20s ease-in-out infinite;
+}
+
+.emfi-ring-a {
+  animation: emfi-ring-a 28s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+.emfi-ring-b {
+  animation: emfi-ring-b 22s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+.emfi-at-drift-a {
+  animation: emfi-at-drift-a 22s ease-in-out infinite;
+}
+
+.emfi-at-drift-b {
+  animation: emfi-at-drift-b 28s ease-in-out infinite;
+}
+
+.emfi-at-drift-c {
+  animation: emfi-at-drift-c 24s ease-in-out infinite;
+}
+
+.emfi-power-pulse {
+  animation: emfi-power-pulse 6s ease-in-out infinite;
+}
+
+.emfi-live-dot {
+  animation: emfi-live-dot 2.2s ease-in-out infinite;
+}
+
+.emfi-page-progress {
+  animation: emfi-page-progress 3s linear infinite;
+  width: 100%;
+  transform-origin: left;
+}
+
+@keyframes emfi-page-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes emfi-drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(28px, -24px, 0);
+  }
+}
+
+@keyframes emfi-drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-22px, 18px, 0);
+  }
+}
+
+@keyframes emfi-ring-a {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes emfi-ring-b {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes emfi-at-drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(36px, -20px, 0);
+  }
+}
+
+@keyframes emfi-at-drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-28px, 24px, 0);
+  }
+}
+
+@keyframes emfi-at-drift-c {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(18px, 16px, 0);
+  }
+}
+
+@keyframes emfi-power-pulse {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.28;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes emfi-live-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes emfi-scan {
+  0% {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  88% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(340px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emfi-marquee-track,
+  .emfi-drift-a,
+  .emfi-drift-b,
+  .emfi-ring-a,
+  .emfi-ring-b,
+  .emfi-at-drift-a,
+  .emfi-at-drift-b,
+  .emfi-at-drift-c,
+  .emfi-power-pulse,
+  .emfi-live-dot,
+  .emfi-page-progress,
+  .emfi-scan {
+    animation: none;
+  }
+
+  .emfi-btn {
+    transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+  }
+
+  .emfi-btn:hover,
+  .emfi-btn:active {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .emfi-btn-arrow {
+    transform: none !important;
+  }
+
+  .emfi-card-lift {
+    transition: border-color 0.28s ease, background-color 0.28s ease;
+  }
+
+  .emfi-card-lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .emfi-marquee-track {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .emfi-marquee-track [aria-hidden="true"] {
+    display: none;
+  }
+
+  .emfi-person-card-back {
+    transform: none !important;
+    transition: opacity 0.2s ease;
+    opacity: 0;
+  }
+
+  .emfi-person-card:hover .emfi-person-card-back,
+  .emfi-person-card:focus-within .emfi-person-card-back {
+    opacity: 1;
+  }
+}
+
+html,
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--action-soft);
+  color: var(--text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--action-focus);
+  outline-offset: 2px;
+}
+
+.emfi-card-lift {
+  position: relative;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease,
+    background-color 0.28s ease;
+}
+
+.emfi-btn {
+  position: relative;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.emfi-btn-arrow {
+  transform-origin: center;
+}
+
+.emfi-person-card-back {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.emfi-person-card:hover .emfi-person-card-back,
+.emfi-person-card:focus-within .emfi-person-card-back {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .emfi-card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--elevation-card-hover);
+    z-index: 2;
+  }
+
+  .emfi-btn:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--elevation-card-hover);
+    z-index: 2;
+  }
+}

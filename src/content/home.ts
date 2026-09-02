@@ -1,0 +1,148 @@
+export const home = {
+  title: "EMFI: Switched On",
+  hero: {
+    eyebrow: "EMFI: Switched On",
+    headline: "Institutional infrastructure.",
+    headlineAccent: "Without the institutional layers.",
+    body: "One operating relationship into the market infrastructure professional clients actually use. Technology where it helps. People where judgement matters.",
+    primaryCta: "Discuss your requirements",
+    secondaryCta: "Explore services",
+    mockupLabel: "Interactive demonstration",
+    mockupStatus: "Switched on",
+  },
+  chainEyebrow: "How the relationship works",
+  chainTitle: "Client → EMFI → Institutional infrastructure",
+  chainBody:
+    "EMFI connects clients into institutional infrastructure through a single operating relationship. Euroclear is one important part of that infrastructure — not the whole proposition.",
+  chainNodes: [
+    { label: "Client", sub: "Instructions / portfolio" },
+    { label: "EMFI", sub: "One operating relationship" },
+  ] as const,
+  chainInfra: [
+    { name: "Euroclear", role: "Securities / depository" },
+    { name: "Allfunds", role: "Fund infrastructure" },
+    { name: "NatWest", role: "Banking / cash" },
+    { name: "Santander", role: "Banking / cash" },
+  ] as const,
+  infraLogosEyebrow: "Institutional infrastructure",
+  infraNote:
+    "These are the institutional relationships and infrastructure through which EMFI operates. Descriptors are draft pending legal and operational review.",
+  servicesEyebrow: "Services",
+  servicesTitle: "One relationship. Fewer layers.",
+  servicesBody: "Three pillars. Not a catalogue of extra categories.",
+  services: [
+    [
+      "Research & Execution",
+      "Research that supports the investment decision. Execution that reaches the relevant markets and securities.",
+      "/services/research-execution",
+    ],
+    [
+      "Settlement & Custody",
+      "The infrastructure behind the transaction — settlement, custody, asset servicing and operational visibility.",
+      "/services/settlement-custody",
+    ],
+    [
+      "Wealth & Asset Management",
+      "MiFID wealth management, AIFMD asset management, and institutional rails for professional counterparties.",
+      "/services/wealth-asset-management",
+    ],
+  ] as const,
+  servicesCta: "Explore this service",
+  demoEyebrow: "Switched on",
+  demoTitle: "See how EMFI works.",
+  demoBody:
+    "Live components on this site are interactive demonstrations — not client access, and not an offer to trade.",
+  demos: [
+    {
+      label: "Research",
+      title: "Explore EMFI Research",
+      href: "/services/research-execution#research-demo",
+    },
+    {
+      label: "Market connectivity",
+      title: "Security lookup",
+      href: "/services/research-execution#execution-demo",
+    },
+    {
+      label: "Infrastructure",
+      title: "Settlement route",
+      href: "/services/settlement-custody#settlement-demo",
+    },
+    {
+      label: "Platform",
+      title: "Explore the platform",
+      href: "/services/settlement-custody#workstation-demo",
+    },
+  ] as const,
+  whyEyebrow: "Why EMFI",
+  whyTitle: "Direct. Responsive. Accountable.",
+  whyBody:
+    "Why an institutional client would choose EMFI rather than a conventional bank, broker, custodian or platform.",
+  why: [
+    ["Direct", "Fewer layers. A more direct route between client requirements and market infrastructure."],
+    ["Responsive", "Technology where it helps, human judgement where it matters, flexibility when the standard route is wrong."],
+    ["Accountable", "Clear ownership, regulated entities, controlled processes and independent oversight."],
+  ] as const,
+  whyCta: "Why EMFI",
+  voiceEyebrow: "Testimonials",
+  voiceTitle: "Trusted across the investment ecosystem.",
+  quotes: [
+    {
+      text: "Research and execution that stay connected to the market, not to a product brochure.",
+      name: "Faisal Mian",
+      firm: "Seaport",
+      lens: "Markets",
+    },
+    {
+      text: "More control over the operating relationship — without being forced through a standard institutional product.",
+      name: "Theodore King",
+      firm: "Lapa Investment Management",
+      lens: "Investment",
+    },
+    {
+      text: "Technology and connectivity that sit inside the infrastructure, not on top of it.",
+      name: "Ben Sobel",
+      firm: "Trumid",
+      lens: "Infrastructure / technology",
+    },
+  ],
+  trustEyebrow: "Trust",
+  trustTitle: "Authorised. Regulated. Auditable.",
+  trustBody:
+    "Evidence, not adjectives. Regulators, client-asset rules, independent audit and institutional infrastructure.",
+  trustCta: "See the evidence",
+  trustSignals: ["FCA", "DFSA", "CIMA", "CASS", "MiFID", "AIFMD"] as const,
+  presenceEyebrow: "Geography",
+  presenceTitle: "Cayman. London. Dubai.",
+  presenceBody:
+    "A genuine part of EMFI’s regulatory and corporate story. Cayman is a fund structure.",
+  locations: [
+    ["Cayman", "EMFI Fund", "Fund structure / Cayman-related matters. Not an EMFI office."],
+    ["London", "UK operations", "UK operations and FCA-regulated entities."],
+    ["Dubai", "DIFC", "EMFI Capital (DIFC) Limited — DFSA-regulated operations."],
+  ] as const,
+  anniversaryEyebrow: "Ten years / 2016—2026",
+  anniversaryTitle: "A decade of building direct access.",
+  anniversaryBadge: "EMFI 10",
+  anniversaryBadgeSub: "2016—2026",
+  milestones: [
+    ["2016", "Establishment", "EMFI Securities incorporated. First institutional trading relationships."],
+    ["2017", "Authorised", "FCA authorisation. A regulated foundation for the operating model."],
+    ["2018", "Settlement & custody", "Expansion from execution into custody infrastructure."],
+    ["2020", "Depository access", "Direct participation in institutional settlement infrastructure."],
+    ["2022", "Technology", "Proprietary platform built around the client workflow."],
+    ["2025", "DIFC", "Dubai presence. DFSA-regulated operations."],
+    ["2026", "Ten years", "A decade of building direct access."],
+  ] as [string, string, string][],
+  timeline: [
+    ["2016", "Established"],
+    ["2018", "Custody"],
+    ["2020", "Infrastructure"],
+    ["2022", "Platform"],
+    ["2025", "DIFC"],
+    ["2026", "Ten years"],
+  ] as const,
+  ctaTitle: "Discuss your requirements.",
+  ctaBody: "Tell us where the operating model needs a more direct connection.",
+  ctaButton: "Contact EMFI",
+};

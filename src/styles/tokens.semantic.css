@@ -1,0 +1,40 @@
+:root {
+  --bg-page: var(--color-white);
+  --bg-subtle: var(--color-gray-100);
+  --bg-muted: var(--color-gray-75);
+  --bg-soft: var(--color-blue-25);
+  --bg-inverse: var(--color-blue-500);
+
+  --text-primary: var(--color-blue-500);
+  --text-secondary: var(--color-gray-800);
+  --text-muted: var(--color-gray-700);
+  --text-inverse: var(--color-white);
+  --text-inverse-muted: var(--color-blue-100);
+
+  --border-default: var(--color-gray-200);
+  --border-strong: var(--color-gray-300);
+  --border-inverse: var(--color-blue-700);
+
+  --action-primary: var(--color-blue-500);
+  --action-hover: var(--color-blue-600);
+  --action-focus: var(--color-blue-400);
+  --action-soft: var(--color-blue-50);
+
+  --status-info: var(--color-blue-400);
+  --status-neutral: var(--color-gray-600);
+
+  --radius-control: 12px;
+  --radius-card: 20px;
+  --radius-surface: 30px;
+  --radius-pill: 9999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 60px;
+  --space-9: 112px;
+}
