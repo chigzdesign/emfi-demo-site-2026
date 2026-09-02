@@ -2,7 +2,7 @@ export const about = {
   title: "About — EMFI",
   eyebrow: "About",
   headline: "A decade of building\ndirect access.",
-  body: "From 2016 to 2026 the story is the development of an institutional investment platform — research and execution, settlement and custody, wealth and asset management, technology, and international expansion. It is not a chronological list of corporate events.",
+  body: "From 2016 to 2026 the story is the development of an institutional investment platform - research and execution, settlement and custody, wealth and asset management, technology, and international expansion. It is not a chronological list of corporate events.",
   yearsEyebrow: "2016 → 2026",
   yearsTitle: "The evolution of the platform.",
   badge: "EMFI 10",
