@@ -18,11 +18,7 @@ export const metadata = {
 export default function ResearchExecutionPage() {
   return (
     <>
-      <PageHero
-        eyebrow={execution.eyebrow}
-        title={execution.headline}
-        body={execution.body}
-      />
+      <PageHero title={execution.headline} body={execution.body} />
 
       <section className="border-b border-line bg-subtle">
         <Container className="py-10">

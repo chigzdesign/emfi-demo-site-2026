@@ -1,12 +1,11 @@
 export const whyEmfi = {
   title: "Why EMFI",
-  eyebrow: "Why EMFI",
   headline: "Direct. Responsive.\nAccountable.",
-  body: "Why an institutional client should choose EMFI rather than a conventional bank, broker, custodian or platform.",
+  body: "Three principles behind EMFI's institutional operating model.",
   compareEyebrow: "Direct",
-  compareTitle: "Fewer layers. Direct institutional infrastructure.",
+  compareTitle: "Fewer layers. More direct access.",
   compareBody:
-    "A more direct route between client requirements and the underlying market infrastructure. Every unnecessary layer is a fee, a delay, and a point of failure.",
+    "Direct relationships with the market infrastructure that matters, reducing unnecessary intermediaries and handoffs.",
   traditionalLabel: "CONVENTIONAL ROUTE",
   traditionalTitle: "Multiple intermediaries",
   traditionalNodes: "05 NODES",
@@ -17,38 +16,36 @@ export const whyEmfi = {
   emfiNodes: "03 NODES",
   emfiFoot: "One relationship. Direct institutional infrastructure.",
   emfiCaption: "DIRECT ROUTE · ONE RELATIONSHIP",
-  pillars: [
+  responsiveEyebrow: "Responsive",
+  responsiveTitle: "Technology where it helps. People where it matters.",
+  responsiveBody:
+    "Automation for routine activity. Experienced people when judgement, exceptions or urgency require it.",
+  responsiveCards: [
     {
-      key: "direct",
-      title: "Direct",
-      claim: "Institutional infrastructure without unnecessary layers.",
-      demonstration: "Client → EMFI → infrastructure.",
-      evidence: "Euroclear, Allfunds, banking infrastructure — as rails, not a logo wall.",
-      body: "Fewer layers. Direct institutional infrastructure. A more direct route between what the client needs and the market infrastructure that actually settles, safekeeps and moves cash.",
+      label: "Technology",
+      points: ["Real-time visibility.", "Web workflows.", "Automated processing."],
     },
     {
-      key: "responsive",
-      title: "Responsive",
-      claim: "Technology plus human responsiveness.",
-      demonstration: "Interactive workstation and live demonstrations.",
-      evidence: "Client examples — including where a standard institutional product was the wrong answer.",
-      body: "Broader than customer service. Human contact, flexibility, judgement, and solutions rather than rigid institutional process. Technology where technology helps; people where judgement matters.",
-      storyTitle: "Control, not a standard product",
-      storyBody:
-        "The Lapa relationship is a useful illustration: giving a client more control over the operating relationship, rather than forcing them through a standard institutional product. That is what “responsive” means in practice.",
-    },
-    {
-      key: "accountable",
-      title: "Accountable",
-      claim: "Regulated and independently scrutinised.",
-      demonstration: "Clear legal-entity structure.",
-      evidence: "FCA / DFSA / CIMA / CASS / auditors.",
-      body: "Someone owns the relationship. The business is regulated. Processes are controlled. Client assets and money are subject to the relevant regulatory safeguards. There is independent oversight.",
+      label: "Human",
+      points: ["Direct access.", "Experienced operators.", "Faster escalation."],
     },
   ],
-  trustCtaEyebrow: "Next",
-  trustCtaTitle: "Authorised. Regulated. Auditable.",
-  trustCtaBody:
-    "Accountability is not a paragraph. It is the public evidence on Trust — regulators, regimes, audit and entities.",
-  trustCta: "Open Trust",
+  accountableEyebrow: "Accountable",
+  accountableTitle: "Clear ownership. Independent oversight.",
+  accountableBody:
+    "Defined legal entities, controlled processes and independent regulatory oversight give clients a clear line of accountability.",
+  accountableCards: [
+    {
+      label: "Demonstration",
+      body: "Clear legal-entity structure.",
+    },
+    {
+      label: "Evidence",
+      body: "FCA · DFSA · CASS · Independent audit",
+      href: "/trust",
+    },
+  ],
+  ctaTitle: "Institutional infrastructure without the institutional layers.",
+  ctaBody: "Execution. Settlement. Custody. Technology. One operating relationship.",
+  ctaButton: "Discuss your requirements",
 };

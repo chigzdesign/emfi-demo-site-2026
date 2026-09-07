@@ -2,8 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { useReducedMotion } from "framer-motion";
+import { cn } from "@/lib/cn";
 
-type Phase = "typing" | "deleting";
+type Phase = "typing" | "holding" | "deleting";
+
+export function splitLastWord(text: string) {
+  const trimmed = text.trimEnd();
+  const i = trimmed.lastIndexOf(" ");
+  if (i === -1) return { rest: "", lastWord: trimmed };
+  return { rest: trimmed.slice(0, i), lastWord: trimmed.slice(i + 1) };
+}
 
 export function HeroRotatingText({
   words,
@@ -30,16 +38,21 @@ export function HeroRotatingText({
 
     if (reduced) {
       setChars(word.length);
+      setPhase("holding");
       return;
     }
 
     if (phase === "typing") {
       if (chars >= word.length) {
-        if (words.length <= 1) return;
-        const id = window.setTimeout(() => setPhase("deleting"), holdMs);
+        const id = window.setTimeout(() => setPhase("holding"), 0);
         return () => window.clearTimeout(id);
       }
       const id = window.setTimeout(() => setChars((c) => c + 1), typeMs);
+      return () => window.clearTimeout(id);
+    }
+
+    if (phase === "holding") {
+      const id = window.setTimeout(() => setPhase("deleting"), holdMs);
       return () => window.clearTimeout(id);
     }
 
@@ -55,22 +68,47 @@ export function HeroRotatingText({
     return () => window.clearTimeout(id);
   }, [chars, deleteMs, holdMs, phase, reduced, typeMs, word.length, words.length]);
 
+  const visible = reduced ? word : word.slice(0, chars);
+
   return (
-    <span
-      className={`relative inline-block ${className ?? ""}`}
-      aria-live="polite"
-      aria-atomic="true"
-    >
-      <span className="invisible whitespace-pre" aria-hidden>
-        {longest}
-      </span>
+    <span className={cn("relative inline-block", className)} aria-hidden>
+      <span className="invisible whitespace-pre">{longest}</span>
       <span className="absolute inset-x-0 top-0 whitespace-pre">
-        {word.slice(0, chars)}
+        {visible}
         <span
-          className="ml-0.5 inline-block h-[0.85em] w-[2px] translate-y-[0.1em] bg-brand align-baseline animate-pulse"
-          aria-hidden
+          className={cn(
+            "ml-0.5 inline-block h-[0.85em] w-[2px] translate-y-[0.12em] bg-current align-baseline",
+            phase === "holding" || reduced ? "emfi-caret" : "emfi-caret-solid",
+          )}
         />
       </span>
+    </span>
+  );
+}
+
+export function HeroTypedLastWord({
+  text,
+  words,
+  className,
+}: {
+  text: string;
+  words?: readonly string[];
+  className?: string;
+}) {
+  const { rest, lastWord } = splitLastWord(text);
+  const animated = words && words.length > 0 ? words : lastWord ? [lastWord] : [];
+
+  if (animated.length === 0) return null;
+
+  return (
+    <span className={cn("block font-light tracking-[-0.03em] text-brand", className)}>
+      {rest ? (
+        <>
+          {rest}
+          <br />
+        </>
+      ) : null}
+      <HeroRotatingText words={animated} />
     </span>
   );
 }

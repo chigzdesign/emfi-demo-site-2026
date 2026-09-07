@@ -1,6 +1,6 @@
+import { ArrowRight } from "lucide-react";
 import { whyEmfi } from "@/content/why-emfi";
 import { Container } from "@/components/layout/container";
-import { Card } from "@/components/ui/card";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { FadeIn } from "@/components/motion/fade-in";
 import { CtaBand } from "@/components/sections/cta-band";
@@ -12,14 +12,13 @@ export const metadata = {
   description: whyEmfi.body,
 };
 
+const cardHover =
+  "rounded-lg border border-line transition-[translate,border-color,box-shadow] duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] group-hover:-translate-y-[3px] group-hover:border-ink/25 group-hover:shadow-[var(--elevation-card-hover)]";
+
 export default function WhyEmfiPage() {
   return (
     <>
-      <PageHero
-        eyebrow={whyEmfi.eyebrow}
-        title={whyEmfi.headline}
-        body={whyEmfi.body}
-      />
+      <PageHero title={whyEmfi.headline} body={whyEmfi.body} />
 
       <section className="bg-subtle">
         <Container className="py-12 md:py-16">
@@ -28,108 +27,140 @@ export default function WhyEmfiPage() {
             <h2 className="text-4xl font-bold tracking-[-0.025em] text-ink md:text-5xl">
               {whyEmfi.compareTitle}
             </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-7 text-ink-secondary">
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-secondary">
               {whyEmfi.compareBody}
             </p>
           </FadeIn>
 
-          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+          <div className="mt-8 grid gap-4 lg:grid-cols-2">
             <FadeIn>
-              <article className="relative overflow-hidden rounded-lg bg-card p-8 emfi-card-lift">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="font-mono text-[10px] tracking-widest text-ink-secondary">
-                      {whyEmfi.traditionalLabel}
-                    </p>
-                    <h3 className="mt-2 text-2xl font-bold text-ink">
-                      {whyEmfi.traditionalTitle}
-                    </h3>
+              <div className="group h-full">
+                <article className={`relative overflow-hidden bg-card p-8 ${cardHover}`}>
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-mono text-[10px] tracking-widest text-ink-secondary">
+                        {whyEmfi.traditionalLabel}
+                      </p>
+                      <h3 className="mt-2 text-2xl font-bold text-ink">
+                        {whyEmfi.traditionalTitle}
+                      </h3>
+                    </div>
+                    <div className="rounded-md border border-line-strong px-3 py-1.5">
+                      <span className="font-mono text-[10px] text-ink">
+                        {whyEmfi.traditionalNodes}
+                      </span>
+                    </div>
                   </div>
-                  <div className="rounded-md border border-line-strong px-3 py-1.5">
-                    <span className="font-mono text-[10px] text-ink">
-                      {whyEmfi.traditionalNodes}
-                    </span>
+                  <RouteDiagram />
+                  <div className="mt-2 flex items-center gap-3 border-t border-line pt-5">
+                    <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-ink" />
+                    <p className="text-sm text-ink-secondary">{whyEmfi.traditionalFoot}</p>
                   </div>
-                </div>
-                <RouteDiagram />
-                <div className="mt-2 flex items-center gap-3 border-t border-line pt-5">
-                  <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-ink" />
-                  <p className="text-sm text-ink-secondary">{whyEmfi.traditionalFoot}</p>
-                </div>
-              </article>
+                </article>
+              </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <article className="relative overflow-hidden rounded-lg bg-soft p-8 emfi-card-lift">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="font-mono text-[10px] tracking-widest text-brand">
-                      {whyEmfi.emfiLabel}
-                    </p>
-                    <h3 className="mt-2 text-2xl font-bold text-ink">{whyEmfi.emfiTitle}</h3>
+              <div className="group h-full">
+                <article className={`relative overflow-hidden bg-soft p-8 ${cardHover}`}>
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-mono text-[10px] tracking-widest text-brand">
+                        {whyEmfi.emfiLabel}
+                      </p>
+                      <h3 className="mt-2 text-2xl font-bold text-ink">{whyEmfi.emfiTitle}</h3>
+                    </div>
+                    <div className="rounded-md border border-brand/30 px-3 py-1.5">
+                      <span className="font-mono text-[10px] text-brand">{whyEmfi.emfiNodes}</span>
+                    </div>
                   </div>
-                  <div className="rounded-md border border-brand/30 px-3 py-1.5">
-                    <span className="font-mono text-[10px] text-brand">{whyEmfi.emfiNodes}</span>
+                  <RouteDiagram direct />
+                  <div className="mt-2 flex items-center gap-3 border-t border-brand/20 pt-5">
+                    <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+                    <p className="text-sm text-brand">{whyEmfi.emfiFoot}</p>
                   </div>
-                </div>
-                <RouteDiagram direct />
-                <div className="mt-2 flex items-center gap-3 border-t border-brand/20 pt-5">
-                  <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
-                  <p className="text-sm text-brand">{whyEmfi.emfiFoot}</p>
-                </div>
-              </article>
+                </article>
+              </div>
             </FadeIn>
           </div>
         </Container>
       </section>
 
-      {whyEmfi.pillars.map((pillar, i) => (
-        <section key={pillar.key} className={i % 2 === 1 ? "bg-subtle" : ""}>
-          <Container className="py-12 md:py-16">
-            <FadeIn>
-              <Eyebrow>{pillar.title}</Eyebrow>
-              <h2 className="max-w-3xl text-4xl font-bold tracking-[-0.025em] text-ink md:text-5xl">
-                {pillar.claim}
-              </h2>
-              <p className="mt-5 max-w-3xl text-lg leading-8 text-ink-secondary">
-                {pillar.body}
-              </p>
-            </FadeIn>
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
-              <Card>
-                <p className="font-mono text-[11px] font-bold tracking-[0.14em] text-brand">
-                  Demonstration
-                </p>
-                <p className="mt-3 text-base font-medium text-ink">{pillar.demonstration}</p>
-              </Card>
-              <Card>
-                <p className="font-mono text-[11px] font-bold tracking-[0.14em] text-brand">
-                  Evidence
-                </p>
-                <p className="mt-3 text-base font-medium text-ink">{pillar.evidence}</p>
-              </Card>
-            </div>
-            {"storyTitle" in pillar && pillar.storyTitle ? (
-              <article className="mt-8 rounded-lg border border-line bg-page p-7 md:p-9">
-                <p className="font-mono text-[11px] font-bold tracking-[0.14em] text-brand">
-                  Lapa
-                </p>
-                <h3 className="mt-3 text-2xl font-bold text-ink">{pillar.storyTitle}</h3>
-                <p className="mt-4 max-w-3xl text-base leading-7 text-ink-secondary">
-                  {pillar.storyBody}
-                </p>
-              </article>
-            ) : null}
-          </Container>
-        </section>
-      ))}
+      <section>
+        <Container className="py-12 md:py-16">
+          <FadeIn>
+            <Eyebrow>{whyEmfi.responsiveEyebrow}</Eyebrow>
+            <h2 className="text-4xl font-bold tracking-[-0.025em] text-ink md:text-5xl">
+              {whyEmfi.responsiveTitle}
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-secondary">
+              {whyEmfi.responsiveBody}
+            </p>
+          </FadeIn>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {whyEmfi.responsiveCards.map((item, i) => (
+              <FadeIn key={item.label} delay={i * 0.08}>
+                <div className="group h-full">
+                  <article className={`h-full bg-page p-7 text-ink ${cardHover}`}>
+                    <p className="font-mono text-[11px] font-bold tracking-[0.14em] text-brand">
+                      {item.label}
+                    </p>
+                    <ul className="mt-4 space-y-1.5">
+                      {item.points.map((point) => (
+                        <li key={point} className="text-base font-medium leading-7 text-ink">
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-      <CtaBand
-        eyebrow={whyEmfi.trustCtaEyebrow}
-        title={whyEmfi.trustCtaTitle}
-        body={whyEmfi.trustCtaBody}
-        action={whyEmfi.trustCta}
-        href="/trust"
-      />
+      <section className="bg-subtle">
+        <Container className="py-12 md:py-16">
+          <FadeIn>
+            <Eyebrow>{whyEmfi.accountableEyebrow}</Eyebrow>
+            <h2 className="text-4xl font-bold tracking-[-0.025em] text-ink md:text-5xl">
+              {whyEmfi.accountableTitle}
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-secondary">
+              {whyEmfi.accountableBody}
+            </p>
+          </FadeIn>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {whyEmfi.accountableCards.map((item, i) => (
+              <FadeIn key={item.label} delay={i * 0.08}>
+                <div className="group h-full">
+                  <article className={`flex h-full flex-col bg-page p-7 text-ink ${cardHover}`}>
+                    <p className="font-mono text-[11px] font-bold tracking-[0.14em] text-brand">
+                      {item.label}
+                    </p>
+                    <p className="mt-4 text-xl font-bold leading-snug">{item.body}</p>
+                    {"href" in item && item.href ? (
+                      <a
+                        href={item.href}
+                        className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline"
+                      >
+                        See the evidence
+                        <ArrowRight
+                          size={14}
+                          aria-hidden
+                          className="transition-transform duration-200 group-hover:translate-x-1"
+                        />
+                      </a>
+                    ) : null}
+                  </article>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <CtaBand title={whyEmfi.ctaTitle} body={whyEmfi.ctaBody} action={whyEmfi.ctaButton} />
     </>
   );
 }

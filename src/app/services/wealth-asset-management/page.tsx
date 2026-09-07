@@ -17,11 +17,7 @@ export const metadata = {
 export default function WealthAssetManagementPage() {
   return (
     <>
-      <PageHero
-        eyebrow={wealth.eyebrow}
-        title={wealth.headline}
-        body={wealth.body}
-      />
+      <PageHero title={wealth.headline} body={wealth.body} />
 
       <section>
         <Container className="py-12 md:py-16">

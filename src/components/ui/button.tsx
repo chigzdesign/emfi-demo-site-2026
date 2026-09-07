@@ -54,17 +54,15 @@ export function Button({
     </>
   );
 
-  if (href) {
-    return (
-      <Link href={href} className={classes}>
-        {content}
-      </Link>
-    );
-  }
-
-  return (
+  const control = href ? (
+    <Link href={href} className={classes}>
+      {content}
+    </Link>
+  ) : (
     <button type={type} onClick={onClick} className={classes}>
       {content}
     </button>
   );
+
+  return <span className="emfi-btn-hit group inline-flex">{control}</span>;
 }

@@ -17,11 +17,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHero
-        eyebrow={contact.eyebrow}
-        title={contact.headline}
-        body={contact.body}
-      />
+      <PageHero title={contact.headline} body={contact.body} />
 
       <section className="border-b border-line bg-subtle">
         <Container className="grid gap-10 py-12 lg:grid-cols-[1.1fr_0.75fr]">

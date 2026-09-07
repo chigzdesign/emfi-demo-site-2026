@@ -15,7 +15,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero eyebrow={about.eyebrow} title={about.headline} body={about.body} />
+      <PageHero title={about.headline} body={about.body} />
 
       <section className="border-b border-line bg-subtle">
         <Container className="py-12 md:py-16">

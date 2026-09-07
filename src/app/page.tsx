@@ -8,6 +8,7 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { FadeIn, FadeInOnLoad } from "@/components/motion/fade-in";
 import { HeroMockup } from "@/components/mockups/operating-view";
 import { HeroAtmosphere } from "@/components/sections/hero-atmosphere";
+import { HeroTypedLastWord } from "@/components/sections/hero-rotating-text";
 import { InfrastructureRotator } from "@/components/sections/infrastructure-rotator";
 import { GlobalPresence } from "@/components/sections/global-presence";
 import { CtaBand } from "@/components/sections/cta-band";
@@ -28,17 +29,12 @@ export default function HomePage() {
           <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.18fr)] lg:gap-10">
             <div>
               <FadeInOnLoad>
-                <p className="mb-5 flex items-center gap-3 text-[13px] font-bold uppercase tracking-[0.12em] text-ink">
-                  <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-                  {home.hero.eyebrow}
-                </p>
-              </FadeInOnLoad>
-              <FadeInOnLoad delay={0.08}>
-                <h1 className="text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-ink md:text-5xl lg:text-[58px]">
+                <h1
+                  className="text-4xl font-extrabold leading-[1.08] tracking-[-0.045em] text-ink md:text-5xl lg:text-[58px]"
+                  aria-label={`${home.hero.headline} ${home.hero.headlineAccent}`}
+                >
                   <span className="block">{home.hero.headline}</span>
-                  <span className="mt-1 block font-light tracking-[-0.03em] text-brand">
-                    {home.hero.headlineAccent}
-                  </span>
+                  <HeroTypedLastWord text={home.hero.headlineAccent} className="mt-1" />
                 </h1>
               </FadeInOnLoad>
               <FadeInOnLoad delay={0.16}>

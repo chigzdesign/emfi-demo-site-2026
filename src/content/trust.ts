@@ -2,145 +2,152 @@ export const trust = {
   title: "Trust",
   eyebrow: "Trust",
   headline: "Authorised. Regulated.\nAuditable.",
-  body: "Trust is an operating fact at EMFI, not a marketing claim. The evidence sits in the public registers, the applicable regimes, independent audit, and the infrastructure through which client assets move.",
-  draftNotice:
-    "Draft for Compliance review. Legal names, register links, logo descriptors and auditor mappings must be verified against public registers immediately before publication.",
+  body: "Independent evidence of the entities, regulatory frameworks and oversight behind EMFI.",
   authorisedEyebrow: "Authorised",
   authorisedTitle: "The authorities that authorise the relevant EMFI entities.",
   authorisedBody:
-    "Each regulator logo should open the official register entry for the relevant EMFI entity — not the regulator homepage.",
+    "EMFI operates through authorised and regulated entities across the relevant jurisdictions.",
   regulators: [
     {
       code: "FCA",
       name: "Financial Conduct Authority",
-      entity: "Relevant UK entities",
-      detail:
-        "EMFI Securities Limited and EMFI Capital Limited are authorised and regulated by the FCA.",
-      href: "https://register.fca.org.uk/s/search?predefined=FIRM&q=EMFI",
+      detail: "Authorised and regulated by the FCA.",
+      logo: "/brand/regulators/fca.svg?v=2",
+      logoWidth: 176,
+      logoHeight: 100,
+      mark: false,
+      entries: [
+        {
+          entity: "EMFI Securities Limited",
+          href: "https://register.fca.org.uk/s/firm?id=001b000003YCzJGAA1",
+        },
+        {
+          entity: "EMFI Capital Limited",
+          href: "https://register.fca.org.uk/s/firm?id=0010X00004H6h4dQAB",
+        },
+      ],
     },
     {
       code: "DFSA",
       name: "Dubai Financial Services Authority",
-      entity: "EMFI Capital (DIFC) Limited",
       detail:
         "DIFC-regulated investment services. Firm Reference F011663. Distinct legal entity — not a branch of EMFI Group.",
-      href: "https://www.dfsa.ae/public-register",
+      logo: "/brand/regulators/dfsa.png",
+      logoWidth: 160,
+      logoHeight: 100,
+      mark: false,
+      entries: [
+        {
+          entity: "EMFI Capital (DIFC) Limited",
+          href: "https://www.dfsa.ae/public-register/firms/emfi-capital-difc-limited",
+        },
+      ],
     },
     {
       code: "CIMA",
       name: "Cayman Islands Monetary Authority",
-      entity: "EMFI Fund",
       detail:
         "Current fund structure. Cayman is a fund jurisdiction, not an EMFI office.",
-      href: "https://www.cima.ky/",
+      logo: "/brand/regulators/cima.png",
+      logoWidth: 80,
+      logoHeight: 80,
+      mark: true,
+      entries: [
+        {
+          entity: "EMFI Fund",
+          href: "https://www.cima.ky/search-entities-cima",
+        },
+      ],
     },
   ],
   regulatedEyebrow: "Regulated",
-  regulatedTitle: "The regimes that govern how work is done.",
+  regulatedTitle: "The frameworks that govern how relevant activities are conducted.",
   regulatedBody:
-    "This is not a reproduction of the firm’s regulatory manual. Descriptions are high-level and subject to Compliance review.",
+    "Relevant EMFI activities operate within established regulatory frameworks covering client assets, investment services, prudential requirements and alternative investment management.",
   regimes: [
     {
       code: "CASS",
       name: "Client Assets Sourcebook",
-      prominence: true,
-      body: "Governs the protection and segregation of client money and custody assets. Central to the trust proposition.",
+      body: "Rules governing the protection and segregation of relevant client money and custody assets.",
     },
     {
       code: "MiFID",
       name: "Markets in Financial Instruments Directive",
-      prominence: false,
       body: "The framework governing relevant investment services and conduct.",
     },
     {
       code: "MIFIDPRU",
       name: "Prudential sourcebook for MiFID investment firms",
-      prominence: false,
-      body: "The applicable UK prudential framework for the relevant investment firm.",
+      body: "The applicable UK prudential framework for relevant investment firms.",
     },
     {
       code: "AIFMD",
       name: "Alternative Investment Fund Managers Directive",
-      prominence: false,
       body: "The framework applicable to relevant alternative investment fund management activity.",
     },
   ],
   auditableEyebrow: "Auditable",
   auditableTitle: "Independent external scrutiny.",
   auditableBody:
-    "EMFI is subject to independent external audit. The three firms below do not all audit the entire EMFI group. Each relationship relates to a specific entity or activity — mapping to be confirmed by Compliance before publication.",
+    "Relevant EMFI entities and activities are subject to independent external audit.",
   auditors: [
     {
       name: "Baker Tilly",
-      scope: "Independent audit — specific EMFI entity / activity (draft)",
+      scope: "Independent external audit",
+      logo: "/brand/auditors/baker-tilly.svg",
+      logoWidth: 280,
+      logoHeight: 56,
     },
     {
       name: "Buzzacott",
-      scope: "Independent audit — specific EMFI entity / activity (draft)",
+      scope: "Independent external audit",
+      logo: "/brand/auditors/buzzacott.svg",
+      logoWidth: 280,
+      logoHeight: 56,
     },
     {
       name: "BDO",
-      scope: "Independent audit — specific EMFI entity / activity (draft)",
-    },
-  ],
-  credibilityEyebrow: "Professional credibility",
-  credibilityTitle: "CISI · EMTA · Bloomberg EMF",
-  credibilityItems: ["CISI", "EMTA", "Bloomberg EMF"],
-  coverageEyebrow: "Independent coverage",
-  coverageTitle: "External recognition, kept lightweight.",
-  coverageBody:
-    "A small selection of relevant media. This section is visual evidence, not an article database that requires continuous maintenance.",
-  coverageItems: ["Selected press"],
-  infraEyebrow: "Institutional infrastructure",
-  infraTitle: "The rails underlying the EMFI relationship.",
-  infraBody:
-    "These are institutional relationships and infrastructure through which EMFI operates. They are not presented as a generic partner wall. Wording is draft pending legal and operational accuracy.",
-  infrastructure: [
-    {
-      name: "Euroclear",
-      role: "Securities / depository infrastructure",
-    },
-    {
-      name: "Allfunds",
-      role: "Fund infrastructure",
-    },
-    {
-      name: "NatWest",
-      role: "Banking / cash",
-    },
-    {
-      name: "Santander",
-      role: "Banking / cash",
+      scope: "Independent external audit",
+      logo: "/brand/auditors/bdo.svg",
+      logoWidth: 280,
+      logoHeight: 56,
     },
   ],
   entitiesEyebrow: "Regulated entities",
-  entitiesTitle: "Entity → Jurisdiction → Regulator → Role",
+  entitiesTitle: "The entities behind the EMFI operating model.",
   entitiesBody:
-    "Clients come to EMFI for the service. The legal entity that performs each component is disclosed here. Exact wording must be checked against the current public registers.",
+    "EMFI operates through distinct legal entities across the relevant jurisdictions. Each entity's jurisdiction, regulator and relevant role are set out below.",
   entities: [
     {
       name: "EMFI Securities Limited",
       jurisdiction: "United Kingdom",
       regulator: "FCA",
       role: "Research & execution",
+      href: "https://register.fca.org.uk/s/firm?id=001b000003YCzJGAA1",
     },
     {
       name: "EMFI Capital Limited",
       jurisdiction: "United Kingdom",
       regulator: "FCA",
-      role: "Settlement & custody / wealth & asset management / relevant regulated activities",
+      role: "Settlement & custody / Wealth & asset management / relevant regulated activities",
+      href: "https://register.fca.org.uk/s/firm?id=0010X00004H6h4dQAB",
     },
     {
       name: "EMFI Capital (DIFC) Limited",
       jurisdiction: "DIFC",
       regulator: "DFSA",
       role: "Relevant DIFC-regulated investment services",
+      href: "https://www.dfsa.ae/public-register/firms/emfi-capital-difc-limited",
     },
     {
       name: "EMFI Fund",
       jurisdiction: "Cayman Islands",
       regulator: "CIMA",
       role: "Current fund structure",
+      href: "https://www.cima.ky/search-entities-cima",
     },
   ],
+  ctaTitle: "Work with EMFI",
+  ctaBody: "Discuss your requirements with our team.",
+  ctaButton: "Discuss your requirements",
 };

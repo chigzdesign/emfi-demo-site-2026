@@ -1,5 +1,21 @@
 import { BrandSign } from "@/components/brand/logo";
 
+function OrbitSign({
+  orbit,
+  size,
+  opacity,
+}: {
+  orbit: "emfi-sign-orbit-a" | "emfi-sign-orbit-b";
+  size: string;
+  opacity: string;
+}) {
+  return (
+    <div className={`emfi-sign-orbit ${orbit} flex items-center justify-center ${opacity}`}>
+      <BrandSign className={`${size} emfi-sign-mark`} />
+    </div>
+  );
+}
+
 export function HeroAtmosphere({
   compact = false,
 }: {
@@ -11,50 +27,27 @@ export function HeroAtmosphere({
       aria-hidden
     >
       <div className="absolute inset-0 bg-page" />
+      <div className="emfi-hero-glow-tl absolute inset-0" />
+      <div className="emfi-hero-glow-br absolute inset-0" />
       {compact ? (
-        <>
-          <div className="emfi-at-drift-a absolute right-[6%] bottom-[6%] text-[#d1d6d8] opacity-15">
-            <BrandSign className="h-[350px] w-[350px]" />
+        <div className="absolute right-[5%] bottom-[10%] text-[var(--color-blue-100)]">
+          <div className="relative flex h-[280px] w-[280px] items-center justify-center [perspective:1800px]">
+            <OrbitSign orbit="emfi-sign-orbit-a" size="h-[280px] w-[280px]" opacity="opacity-[0.22]" />
           </div>
-          <div className="emfi-at-drift-c absolute right-[25%] bottom-[10%] text-[#d1d6d8] opacity-20">
-            <BrandSign className="h-[180px] w-[180px]" />
-          </div>
-        </>
+        </div>
       ) : (
         <>
-          <div className="emfi-at-drift-a absolute -left-10 top-[2%] text-[#d1d6d8] opacity-20">
-            <BrandSign className="h-[350px] w-[350px]" />
+          <div className="absolute top-[2%] right-[-4%] text-[var(--color-blue-100)]">
+            <div className="emfi-sign-cluster relative flex h-[500px] w-[500px] items-center justify-center [perspective:1800px]">
+              <span className="emfi-sign-glow absolute top-1/2 left-1/2 h-[82%] w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color-mix(in_srgb,var(--color-blue-100)_45%,transparent)] blur-3xl" />
+              <OrbitSign orbit="emfi-sign-orbit-b" size="h-[440px] w-[440px]" opacity="opacity-[0.20]" />
+            </div>
           </div>
-          <div className="emfi-at-drift-b absolute right-[-5%] top-[35%] text-[#d1d6d8] opacity-20">
-            <BrandSign className="h-[300px] w-[300px]" />
+          <div className="absolute right-0 bottom-0 text-[var(--color-blue-100)]">
+            <div className="relative flex h-[400px] w-[400px] items-center justify-center [perspective:1800px]">
+              <OrbitSign orbit="emfi-sign-orbit-a" size="h-[400px] w-[400px]" opacity="opacity-[0.22]" />
+            </div>
           </div>
-          <div className="emfi-at-drift-c absolute bottom-[2%] left-[37%] text-[#d1d6d8] opacity-20">
-            <BrandSign className="h-[150px] w-[150px]" />
-          </div>
-          <div className="emfi-power-pulse absolute right-[5%] top-[2%] text-[#d1d6d8] opacity-25">
-            <BrandSign className="h-[150px] w-[150px]" />
-          </div>
-          <svg
-            className="absolute inset-0 h-full w-full text-[#d1d6d8]/70"
-            viewBox="0 0 1200 640"
-            fill="none"
-          >
-            <circle cx="220" cy="180" r="4" fill="currentColor" />
-            <circle cx="780" cy="240" r="4" fill="currentColor" />
-            <circle cx="980" cy="160" r="4" fill="currentColor" />
-            <path
-              d="M220 180 C 420 90, 620 320, 780 240"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeDasharray="4 8"
-            />
-            <path
-              d="M780 240 C 860 200, 920 140, 980 160"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeDasharray="4 8"
-            />
-          </svg>
         </>
       )}
     </div>

@@ -20,11 +20,7 @@ export const metadata = {
 export default function SettlementCustodyPage() {
   return (
     <>
-      <PageHero
-        eyebrow={settlement.eyebrow}
-        title={settlement.headline}
-        body={settlement.body}
-      >
+      <PageHero title={settlement.headline} body={settlement.body}>
         <span className="mt-9 inline-block rounded-full border border-brand px-4 py-2 font-mono text-[11px] tracking-wide text-brand">
           {settlement.badge}
         </span>

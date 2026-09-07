@@ -17,11 +17,7 @@ const audienceIcons = [Building2, Network, WalletCards];
 export default function ServicesPage() {
   return (
     <>
-      <PageHero
-        eyebrow={services.eyebrow}
-        title={services.headline}
-        body={services.body}
-      >
+      <PageHero title={services.headline} body={services.body}>
         <div className="mt-9">
           <Button href="/contact">{services.cta}</Button>
         </div>
