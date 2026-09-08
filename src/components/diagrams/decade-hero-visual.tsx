@@ -3,7 +3,21 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { about } from "@/content/about";
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const CX = 160;
+const CY = 168;
+const RING = 92;
+
+function tick(i: number, inner: number, outer: number) {
+  const a = ((i * 36 - 90) * Math.PI) / 180;
+  const c = Math.cos(a);
+  const s = Math.sin(a);
+  return {
+    x1: CX + c * inner,
+    y1: CY + s * inner,
+    x2: CX + c * outer,
+    y2: CY + s * outer,
+  };
+}
 
 export function DecadeHeroVisual() {
   const reduceMotion = useReducedMotion();
@@ -11,126 +25,128 @@ export function DecadeHeroVisual() {
   const label = `${from} to ${to}. ${mark}. ${caption}.`;
 
   return (
-    <figure className="relative w-full" aria-label={label}>
-      <svg viewBox="0 0 720 168" className="w-full" role="img" aria-hidden>
-        <line
-          x1={92}
-          y1={78}
-          x2={628}
-          y2={78}
-          stroke="var(--border-strong)"
-          strokeWidth={1.5}
-        />
-        <motion.line
-          x1={92}
-          y1={78}
-          x2={304}
-          y2={78}
+    <figure className="relative mx-auto w-full max-w-[17rem]" aria-label={label}>
+      <svg viewBox="0 0 320 360" className="h-auto w-full" role="img" aria-hidden>
+        <text
+          x={CX}
+          y={CY + 38}
+          textAnchor="middle"
+          fill="var(--action-primary)"
+          fillOpacity={0.12}
+          fontSize={168}
+          fontWeight={800}
+          letterSpacing={-10}
+          fontFamily="var(--font-inter), ui-sans-serif, system-ui, sans-serif"
+        >
+          10
+        </text>
+        <circle
+          cx={CX}
+          cy={CY}
+          r={RING + 16}
+          fill="none"
           stroke="var(--action-primary)"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          initial={reduceMotion ? false : { pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.4, ease }}
+          strokeOpacity={0.22}
+          strokeWidth={1.25}
         />
-        <motion.line
-          x1={416}
-          y1={78}
-          x2={628}
-          y2={78}
+        <circle
+          cx={CX}
+          cy={CY}
+          r={RING}
+          fill="none"
           stroke="var(--action-primary)"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          initial={reduceMotion ? false : { pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.4, delay: reduceMotion ? 0 : 0.55, ease }}
+          strokeWidth={2.5}
         />
+        {Array.from({ length: 10 }, (_, i) => {
+          const t = tick(i, RING - 7, RING + 7);
+          return (
+            <line
+              key={i}
+              x1={t.x1}
+              y1={t.y1}
+              x2={t.x2}
+              y2={t.y2}
+              stroke="var(--action-primary)"
+              strokeOpacity={i % 5 === 0 ? 0.9 : 0.35}
+              strokeWidth={i % 5 === 0 ? 2 : 1.25}
+              strokeLinecap="round"
+            />
+          );
+        })}
+        <circle cx={CX} cy={CY - RING} r={3.5} fill="var(--action-primary)" />
+        <circle cx={CX} cy={CY + RING} r={3.5} fill="var(--action-primary)" />
         {reduceMotion ? null : (
-          <>
-            <motion.circle
-              cy={78}
-              r={9}
-              fill="color-mix(in srgb, var(--action-primary) 28%, transparent)"
-              initial={{ cx: 92, opacity: 0 }}
-              animate={{ cx: [92, 92, 628, 628], opacity: [0, 1, 1, 0] }}
-              transition={{
-                duration: 8,
-                delay: 1.6,
-                repeat: Infinity,
-                ease: [0.4, 0, 0.2, 1],
-              }}
+          <motion.g
+            initial={{ rotate: -90 }}
+            animate={{ rotate: 270 }}
+            transition={{
+              duration: 14,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            transformTemplate={({ rotate }) => `rotate(${rotate} ${CX} ${CY})`}
+          >
+            <circle
+              cx={CX + RING}
+              cy={CY}
+              r={8}
+              fill="color-mix(in srgb, var(--action-primary) 22%, transparent)"
             />
-            <motion.circle
-              cy={78}
-              r={3.5}
-              fill="var(--action-primary)"
-              initial={{ cx: 92, opacity: 0 }}
-              animate={{ cx: [92, 92, 628, 628], opacity: [0, 1, 1, 0] }}
-              transition={{
-                duration: 8,
-                delay: 1.6,
-                repeat: Infinity,
-                ease: [0.4, 0, 0.2, 1],
-              }}
-            />
-          </>
+            <circle cx={CX + RING} cy={CY} r={3.5} fill="var(--action-primary)" />
+          </motion.g>
         )}
         <rect
-          x={304}
-          y={54}
-          width={112}
+          x={CX - 58}
+          y={CY - 24}
+          width={116}
           height={48}
-          rx={8}
-          fill="var(--bg-page)"
-          stroke="var(--action-primary)"
-          strokeWidth={1.5}
+          rx={10}
+          fill="var(--bg-inverse)"
         />
         <text
-          x={360}
-          y={84}
+          x={CX}
+          y={CY + 7}
           textAnchor="middle"
-          fill="var(--text-primary)"
-          fontSize={20}
+          fill="var(--text-inverse)"
+          fontSize={22}
           fontWeight={800}
-          letterSpacing={1.2}
+          letterSpacing={4.2}
           fontFamily="var(--font-inter), ui-sans-serif, system-ui, sans-serif"
         >
           {mark}
         </text>
         <text
-          x={48}
-          y={83}
+          x={CX}
+          y={42}
           textAnchor="middle"
           fill="var(--action-primary)"
-          fontSize={13}
+          fontSize={15}
           fontWeight={700}
-          letterSpacing={1.4}
+          letterSpacing={2.4}
           fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
         >
           {from}
         </text>
         <text
-          x={672}
-          y={83}
+          x={CX}
+          y={318}
           textAnchor="middle"
           fill="var(--action-primary)"
-          fontSize={13}
+          fontSize={15}
           fontWeight={700}
-          letterSpacing={1.4}
+          letterSpacing={2.4}
           fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
         >
           {to}
         </text>
         <text
-          x={360}
-          y={138}
+          x={CX}
+          y={344}
           textAnchor="middle"
           fill="var(--text-muted)"
-          fontSize={11}
+          fontSize={10}
           fontWeight={700}
-          letterSpacing={3.2}
+          letterSpacing={2.4}
           fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
         >
           {caption.toUpperCase()}

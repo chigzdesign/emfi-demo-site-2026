@@ -54,7 +54,10 @@ export function PageHero({
     <FadeIn className={visualOverlay ? "relative z-10" : undefined}>
       {lead}
       <h1
-        className="max-w-5xl text-4xl font-extrabold leading-[1.05] tracking-[-0.04em] text-ink md:text-6xl lg:text-7xl"
+        className={cn(
+          "text-4xl font-extrabold leading-[1.05] tracking-[-0.04em] text-ink md:text-6xl lg:text-7xl",
+          visual && !visualOverlay ? "max-w-none" : "max-w-5xl",
+        )}
         aria-label={title.replace(/\n/g, " ")}
       >
         {boldLines.map((line) => (
@@ -69,7 +72,12 @@ export function PageHero({
         />
       </h1>
       {body ? (
-        <p className="mt-5 max-w-2xl text-lg leading-8 text-ink-secondary">
+        <p
+          className={cn(
+            "mt-5 text-lg leading-8 text-ink-secondary",
+            visual && !visualOverlay ? "max-w-none" : "max-w-2xl",
+          )}
+        >
           {body}
         </p>
       ) : null}
@@ -82,7 +90,7 @@ export function PageHero({
       <HeroAtmosphere compact sign={!visual} />
       <Container className="relative w-full py-12 lg:py-16">
         {visual && !visualOverlay ? (
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12">
+          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)] lg:gap-10">
             {copy}
             <FadeIn delay={0.14}>{visual}</FadeIn>
           </div>

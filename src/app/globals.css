@@ -389,9 +389,19 @@
     display: none;
   }
 
+  .emfi-person-card-inner {
+    transform: none !important;
+    transition: none;
+  }
+
+  .emfi-person-card-front,
   .emfi-person-card-back {
+    backface-visibility: visible;
     transform: none !important;
     transition: opacity 0.2s ease;
+  }
+
+  .emfi-person-card-back {
     opacity: 0;
   }
 
@@ -451,15 +461,33 @@ body {
   transform-origin: center;
 }
 
+.emfi-person-card {
+  perspective: 1200px;
+}
+
+.emfi-person-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.emfi-person-card:hover .emfi-person-card-inner,
+.emfi-person-card:focus-within .emfi-person-card-inner {
+  transform: rotateY(180deg);
+}
+
+.emfi-person-card-front,
 .emfi-person-card-back {
-  opacity: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.emfi-person-card-back {
+  transform: rotateY(180deg);
   pointer-events: none;
-  transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .emfi-person-card:hover .emfi-person-card-back,
 .emfi-person-card:focus-within .emfi-person-card-back {
-  opacity: 1;
   pointer-events: auto;
 }
 

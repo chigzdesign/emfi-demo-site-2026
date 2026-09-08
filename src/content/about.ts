@@ -33,109 +33,136 @@ export const about = {
     ["2026", "Ten years", "A decade of building direct access."],
   ] as [string, string, string][],
   geographyEyebrow: "Geography",
-  geographyTitle: "Cayman. London. Dubai.",
+  geographyTitle: "London. Dubai. Cayman.",
   geographyBody:
-    "Natural symmetry, and a genuine part of EMFI’s regulatory and corporate story. The close operating relationship between the businesses does not collapse the legal distinction.",
+    "EMFI's international operating and regulatory footprint spans the United Kingdom, Dubai and Cayman Islands.",
   geography: [
     {
-      city: "Cayman",
-      role: "Fund structure / EMFI Fund",
-      note: "Enquiries relating to EMFI Fund and Cayman-related matters.",
-    },
-    {
       city: "London",
-      role: "UK operations and regulated entities",
-      note: "FCA-authorised UK businesses. Operating address in Mayfair.",
+      role: "United Kingdom",
+      note: "UK operations and FCA regulated entities.",
     },
     {
       city: "Dubai",
-      role: "DIFC-regulated operations",
-      note: "EMFI Capital (DIFC) Limited is a distinct legal entity, not simply a branch of EMFI Group.",
+      role: "United Arab Emirates",
+      note: "DIFC regulated entities.",
+    },
+    {
+      city: "Cayman",
+      role: "Cayman Islands",
+      note: "Fund structure and EMFI Fund.",
+    },
+  ],
+  standingEyebrow: "Credibility",
+  standingTitle: "Professional standing.",
+  standingMarks: [
+    {
+      name: "CISI",
+      logo: "/brand/standing/cisi.png",
+      logoWidth: 572,
+      logoHeight: 288,
+    },
+    {
+      name: "EMTA",
+      logo: "/brand/standing/emta.svg",
+      logoWidth: 290,
+      logoHeight: 85,
+    },
+    {
+      name: "Bloomberg EMF",
+      logo: "/brand/standing/bloomberg.png",
+      logoWidth: 280,
+      logoHeight: 56,
+      ink: true,
     },
   ],
   peopleEyebrow: "People",
-  peopleTitle: "Human attention is part of the infrastructure.",
+  peopleTitle: "The people behind EMFI.",
+  peopleBody: "EMFI combines market expertise, investment experience, operational knowledge and technology around a single institutional relationship.",
   people: [
     {
       name: "Atif Rashid",
-      role: "Finance / Compliance",
+      role: "Finance & Compliance",
       board: true,
       description:
-        "Owns the financial control and compliance overlay that sits across the operating relationship. The work is the control framework, not a brochure: books, capital, and the rules that apply to each legal entity. Board-level accountability for how the firm remains authorised, solvent and auditable. Clients meet a relationship that can be inspected, not a process explained after the fact.",
+        "Maintains financial controls, regulatory compliance and accountability across the business.",
     },
     {
       name: "Shamroz Bashir",
-      role: "Risk / Reporting",
+      role: "Risk & Reporting",
       board: true,
       description:
-        "Responsible for the risk picture the operating relationship actually runs on — exposures, limits, exceptions and the reporting that makes them visible. The role is not a delayed pack; it is the line of sight between client activity and the controls that sit behind it. Board-level ownership of how risk is measured, escalated and explained. Judgement where the standard report is not the right answer.",
+        "Oversees risk, exposures and controls to support informed decision-making.",
     },
     {
       name: "Gustavo Rodrigues",
-      role: "Onboarding / KYC",
+      role: "Onboarding & KYC",
       board: true,
       description:
-        "Leads the onboarding and KYC work that decides whether a relationship can start — and on what terms. Institutional classification, due diligence and the evidence the regulators expect are treated as operating facts, not a formality at the door. Board-level accountability for who is accepted, and why. Selective by design: the standard route is not always the right one.",
+        "Leads client onboarding, KYC and due diligence to establish the right relationships.",
     },
     {
       name: "Robert Hagon",
-      role: "Distribution",
+      role: "Institutional Coverage",
       description:
-        "Covers the institutional distribution relationship — introducing the operating model to professional clients who need a more direct route into the market. The work is coverage and judgement, not a product catalogue. Translates client requirements into the right EMFI capability, with a clear entity and a clear next step. Human contact where a platform page would be the wrong answer.",
+        "Builds and manages institutional relationships, connecting client requirements with the right EMFI capabilities.",
     },
     {
       name: "Mark Cleary",
-      role: "Distribution",
+      role: "Execution, Settlement & Custody",
       description:
-        "Institutional coverage for clients who need execution, settlement and custody to sit in one relationship rather than across several intermediaries. The role is to open the door without adding a layer. Requirements are mapped to the relevant rails, the relevant people, and the relevant legal entity. Distribution here is follow-through, not a handover at the first conversation.",
+        "Coordinates execution, settlement and custody to keep the client relationship connected end to end.",
     },
     {
       name: "Jose Bermudez",
-      role: "Portfolio Management",
+      role: "Wealth & Asset Management",
       description:
-        "Responsible for portfolio management where EMFI’s wealth and asset-management activity requires it — mandates, construction and the oversight professional clients expect. The work sits on institutional execution and custody rails, not a wrapper around a product. Decisions are made with the operating relationship in view: settlement, cash and reporting are part of the same picture. Accountability stays with a named desk, not a generic model.",
+        "Manages portfolios and investment mandates within EMFI’s broader execution and custody framework.",
     },
     {
       name: "Guillermo Guerrero",
       role: "Research",
       description:
-        "Writes research that supports the investment and execution relationship — context for the decision, not a country catalogue. Notes are for professional clients making allocations, not a publishing house with a brokerage attached. The desk stays connected to the market and to the people who take the order. Research here is decision support. It does not define the firm.",
+        "Provides market and investment research that supports institutional decisions and execution.",
     },
     {
       name: "Rosamnis Marcano",
       role: "Economics",
       description:
-        "Provides the economic context that sits behind allocation, duration and credit decisions. The work is interpretation for the desk and for professional clients, not a standalone macro product. Rates, liquidity and the shape of the next window are treated as operating inputs. The output is judgement the relationship can use, not a commentary stream that lives apart from execution.",
+        "Provides economic context for allocation, duration and credit decisions.",
     },
     {
       name: "Matias Montes",
       role: "Strategy",
       description:
-        "Owns the strategy lens across the platform: how the operating relationship should be built, where technology helps, and where people still have to decide. The work connects research, execution, settlement and coverage into one direction rather than a set of silos. Strategy here is the shape of the firm the client actually meets. It is not a slide that sits above the infrastructure.",
+        "Connects EMFI’s capabilities, people and technology into one operating direction.",
     },
     {
       name: "Zee Amin",
       role: "Operations",
       description:
-        "Runs the operational follow-through after the instruction — matching, settlement, exceptions and the visibility clients need once the trade is live. Automation where it is reliable; people where the exception is the point. The role is completion, not a back-office that starts after someone else has finished. Status should reflect the underlying infrastructure, not an end-of-day report dressed as a product.",
+        "Ensures instructions move through matching, settlement, exceptions and reporting.",
     },
     {
       name: "Bhavin Umaraniya",
-      role: "Information Technology",
+      role: "Technology",
       photo: "/people/bhavin-umaraniya-3.png",
       description:
-        "Responsible for the information-technology environment the operating relationship runs on — systems, access, resilience and the controls around them. Technology is treated as part of the infrastructure, not a layer placed on top of it. The work is to keep the platform switched on, secure and usable for professional clients. Judgement stays with people; the systems are there to make that judgement faster, not to replace it.",
+        "Maintains the systems, access and infrastructure that support the operating relationship.",
     },
     {
       name: "Kishan Lashkari",
       role: "Software Development",
       photo: "/people/kishan-lashkari.png",
       description:
-        "Builds the software behind the demonstrations and the client workflow — the screens, the connections and the operational view after the trade. Development sits inside the infrastructure rather than as a separate digital product. The aim is a workstation that reflects how EMFI actually works: research, orders, settlement and reporting in one place. Code is in service of the relationship, not the other way around.",
+        "Builds the technology that connects EMFI’s workflows, systems and client experience.",
     },
   ],
   boardLabel: "Board Member",
   entitiesNote:
     "Regulated entities, jurisdictions and roles are set out on Trust. About is the story of the platform — not a legal directory.",
   entitiesCta: "Regulated entities",
+  ctaTitle: "Meet EMFI.",
+  ctaBody: "Talk to the team behind the platform.",
+  ctaButton: "Contact EMFI",
 };
