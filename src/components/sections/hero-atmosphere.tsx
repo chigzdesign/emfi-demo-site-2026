@@ -18,8 +18,10 @@ function OrbitSign({
 
 export function HeroAtmosphere({
   compact = false,
+  sign = true,
 }: {
   compact?: boolean;
+  sign?: boolean;
 }) {
   return (
     <div
@@ -30,11 +32,13 @@ export function HeroAtmosphere({
       <div className="emfi-hero-glow-tl absolute inset-0" />
       <div className="emfi-hero-glow-br absolute inset-0" />
       {compact ? (
-        <div className="absolute right-[5%] bottom-[10%] text-[var(--color-blue-100)]">
-          <div className="relative flex h-[280px] w-[280px] items-center justify-center [perspective:1800px]">
-            <OrbitSign orbit="emfi-sign-orbit-a" size="h-[280px] w-[280px]" opacity="opacity-[0.22]" />
+        sign ? (
+          <div className="absolute right-[5%] bottom-[10%] text-[var(--color-blue-100)]">
+            <div className="relative flex h-[280px] w-[280px] items-center justify-center [perspective:1800px]">
+              <OrbitSign orbit="emfi-sign-orbit-a" size="h-[280px] w-[280px]" opacity="opacity-[0.22]" />
+            </div>
           </div>
-        </div>
+        ) : null
       ) : (
         <>
           <div className="absolute top-[2%] right-[-4%] text-[var(--color-blue-100)]">

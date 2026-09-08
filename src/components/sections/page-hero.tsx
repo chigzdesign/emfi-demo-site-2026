@@ -32,6 +32,8 @@ export function PageHero({
   body,
   lead,
   children,
+  visual,
+  visualOverlay = false,
   className,
   rotatingWords,
 }: {
@@ -39,6 +41,8 @@ export function PageHero({
   body?: string;
   lead?: React.ReactNode;
   children?: React.ReactNode;
+  visual?: React.ReactNode;
+  visualOverlay?: boolean;
   className?: string;
   /** Optional alternate last words. Defaults to the headline's last word. */
   rotatingWords?: readonly string[];
@@ -46,35 +50,54 @@ export function PageHero({
   const titleLines = title.split("\n").filter(Boolean);
   const { boldLines, lastLine } = splitHeroTitle(titleLines);
 
+  const copy = (
+    <FadeIn className={visualOverlay ? "relative z-10" : undefined}>
+      {lead}
+      <h1
+        className="max-w-5xl text-4xl font-extrabold leading-[1.05] tracking-[-0.04em] text-ink md:text-6xl lg:text-7xl"
+        aria-label={title.replace(/\n/g, " ")}
+      >
+        {boldLines.map((line) => (
+          <span key={line} className="mt-1 block first:mt-0">
+            {line}
+          </span>
+        ))}
+        <HeroTypedLastWord
+          text={lastLine}
+          words={rotatingWords}
+          className={cn(boldLines.length && "mt-1")}
+        />
+      </h1>
+      {body ? (
+        <p className="mt-5 max-w-2xl text-lg leading-8 text-ink-secondary">
+          {body}
+        </p>
+      ) : null}
+      {children}
+    </FadeIn>
+  );
+
   return (
-    <section className={cn("relative overflow-hidden border-b border-line bg-page", className)}>
-      <HeroAtmosphere compact />
-      <Container className="relative py-12 lg:py-16">
-        <FadeIn>
-          {lead}
-          <h1
-            className="max-w-5xl text-4xl font-extrabold leading-[1.05] tracking-[-0.04em] text-ink md:text-6xl lg:text-7xl"
-            aria-label={title.replace(/\n/g, " ")}
-          >
-            {boldLines.map((line) => (
-              <span key={line} className="mt-1 block first:mt-0">
-                {line}
-              </span>
-            ))}
-            <HeroTypedLastWord
-              text={lastLine}
-              words={rotatingWords}
-              className={cn(boldLines.length && "mt-1")}
-            />
-          </h1>
-          {body ? (
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-ink-secondary">
-              {body}
-            </p>
-          ) : null}
-          {children}
-        </FadeIn>
+    <section className={cn("relative flex min-h-[29.75rem] items-center overflow-hidden border-b border-line bg-page", className)}>
+      <HeroAtmosphere compact sign={!visual} />
+      <Container className="relative w-full py-12 lg:py-16">
+        {visual && !visualOverlay ? (
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12">
+            {copy}
+            <FadeIn delay={0.14}>{visual}</FadeIn>
+          </div>
+        ) : (
+          copy
+        )}
       </Container>
+      {visual && visualOverlay ? (
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[min(48%,34rem)] items-center justify-center overflow-hidden md:flex">
+          <FadeIn delay={0.14} className="flex h-[88%] w-full items-center justify-center">
+            {visual}
+          </FadeIn>
+        </div>
+      ) : null}
     </section>
   );
 }
+

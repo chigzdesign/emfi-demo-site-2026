@@ -75,7 +75,7 @@ export default function SettlementCustodyPage() {
             <h2 className="text-4xl font-bold tracking-[-0.025em] text-ink md:text-5xl">
               {settlement.demoTitle}
             </h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-secondary">
+            <p className="mt-4 max-w-4xl text-lg leading-8 text-ink-secondary">
               {settlement.demoBody}
             </p>
           </FadeIn>

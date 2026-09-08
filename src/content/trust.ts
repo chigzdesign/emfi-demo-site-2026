@@ -61,9 +61,9 @@ export const trust = {
     },
   ],
   regulatedEyebrow: "Regulated",
-  regulatedTitle: "The frameworks that govern how relevant activities are conducted.",
+  regulatedTitle: "The regulatory frameworks that govern relevant activities.",
   regulatedBody:
-    "Relevant EMFI activities operate within established regulatory frameworks covering client assets, investment services, prudential requirements and alternative investment management.",
+    "Relevant activities operate within established frameworks covering client assets, investment services, prudential requirements and alternative investment management.",
   regimes: [
     {
       code: "CASS",
@@ -94,23 +94,24 @@ export const trust = {
     {
       name: "Baker Tilly",
       scope: "Independent external audit",
-      logo: "/brand/auditors/baker-tilly.svg",
+      logo: "/brand/auditors/baker-tilly.png",
       logoWidth: 280,
-      logoHeight: 56,
+      logoHeight: 73,
     },
     {
       name: "Buzzacott",
       scope: "Independent external audit",
-      logo: "/brand/auditors/buzzacott.svg",
+      logo: "/brand/auditors/buzzacott.png",
       logoWidth: 280,
       logoHeight: 56,
+      ink: true,
     },
     {
       name: "BDO",
       scope: "Independent external audit",
-      logo: "/brand/auditors/bdo.svg",
+      logo: "/brand/auditors/bdo.png",
       logoWidth: 280,
-      logoHeight: 56,
+      logoHeight: 108,
     },
   ],
   entitiesEyebrow: "Regulated entities",
@@ -147,7 +148,7 @@ export const trust = {
       href: "https://www.cima.ky/search-entities-cima",
     },
   ],
-  ctaTitle: "Work with EMFI",
-  ctaBody: "Discuss your requirements with our team.",
-  ctaButton: "Discuss your requirements",
+  ctaTitle: "A closer look at EMFI",
+  ctaBody: "Our team is available to provide further information on EMFI's structure, regulatory framework and operating model.",
+  ctaButton: "Speak with our team",
 };

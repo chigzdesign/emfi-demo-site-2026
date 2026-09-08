@@ -25,7 +25,7 @@ export default function WealthAssetManagementPage() {
             {wealth.pillars.map((pillar, i) => (
               <FadeIn key={pillar.title} delay={i * 0.08}>
                 <Card className="h-full">
-                  <p className="font-mono text-[11px] font-bold tracking-[0.14em] text-brand">
+                  <p className="font-mono text-[12px] font-bold tracking-[0.14em] text-brand">
                     {pillar.regime}
                   </p>
                   <h3 className="mt-4 text-2xl font-bold text-ink">{pillar.title}</h3>

@@ -27,18 +27,18 @@ export default function WhyEmfiPage() {
             <h2 className="text-4xl font-bold tracking-[-0.025em] text-ink md:text-5xl">
               {whyEmfi.compareTitle}
             </h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-secondary">
+            <p className="mt-4 max-w-4xl text-lg leading-8 text-ink-secondary">
               {whyEmfi.compareBody}
             </p>
           </FadeIn>
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
-            <FadeIn>
+            <FadeIn className="h-full">
               <div className="group h-full">
-                <article className={`relative overflow-hidden bg-card p-8 ${cardHover}`}>
+                <article className={`relative flex h-full min-h-full flex-col overflow-hidden bg-card p-8 ${cardHover}`}>
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="font-mono text-[10px] tracking-widest text-ink-secondary">
+                      <p className="font-mono text-[12px] tracking-widest text-ink-secondary">
                         {whyEmfi.traditionalLabel}
                       </p>
                       <h3 className="mt-2 text-2xl font-bold text-ink">
@@ -46,12 +46,14 @@ export default function WhyEmfiPage() {
                       </h3>
                     </div>
                     <div className="rounded-md border border-line-strong px-3 py-1.5">
-                      <span className="font-mono text-[10px] text-ink">
+                      <span className="font-mono text-[12px] text-ink">
                         {whyEmfi.traditionalNodes}
                       </span>
                     </div>
                   </div>
-                  <RouteDiagram />
+                  <div className="flex flex-1 items-center">
+                    <RouteDiagram />
+                  </div>
                   <div className="mt-2 flex items-center gap-3 border-t border-line pt-5">
                     <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-ink" />
                     <p className="text-sm text-ink-secondary">{whyEmfi.traditionalFoot}</p>
@@ -59,21 +61,23 @@ export default function WhyEmfiPage() {
                 </article>
               </div>
             </FadeIn>
-            <FadeIn delay={0.1}>
+            <FadeIn className="h-full" delay={0.1}>
               <div className="group h-full">
-                <article className={`relative overflow-hidden bg-soft p-8 ${cardHover}`}>
+                <article className={`relative flex h-full min-h-full flex-col overflow-hidden bg-soft p-8 ${cardHover}`}>
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="font-mono text-[10px] tracking-widest text-brand">
+                      <p className="font-mono text-[12px] tracking-widest text-brand">
                         {whyEmfi.emfiLabel}
                       </p>
                       <h3 className="mt-2 text-2xl font-bold text-ink">{whyEmfi.emfiTitle}</h3>
                     </div>
                     <div className="rounded-md border border-brand/30 px-3 py-1.5">
-                      <span className="font-mono text-[10px] text-brand">{whyEmfi.emfiNodes}</span>
+                      <span className="font-mono text-[12px] text-brand">{whyEmfi.emfiNodes}</span>
                     </div>
                   </div>
-                  <RouteDiagram direct />
+                  <div className="flex flex-1 items-center">
+                    <RouteDiagram direct />
+                  </div>
                   <div className="mt-2 flex items-center gap-3 border-t border-brand/20 pt-5">
                     <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
                     <p className="text-sm text-brand">{whyEmfi.emfiFoot}</p>
@@ -92,7 +96,7 @@ export default function WhyEmfiPage() {
             <h2 className="text-4xl font-bold tracking-[-0.025em] text-ink md:text-5xl">
               {whyEmfi.responsiveTitle}
             </h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-secondary">
+            <p className="mt-4 max-w-4xl text-lg leading-8 text-ink-secondary">
               {whyEmfi.responsiveBody}
             </p>
           </FadeIn>
@@ -101,7 +105,7 @@ export default function WhyEmfiPage() {
               <FadeIn key={item.label} delay={i * 0.08}>
                 <div className="group h-full">
                   <article className={`h-full bg-page p-7 text-ink ${cardHover}`}>
-                    <p className="font-mono text-[11px] font-bold tracking-[0.14em] text-brand">
+                    <p className="font-mono text-[12px] font-bold tracking-[0.14em] text-brand">
                       {item.label}
                     </p>
                     <ul className="mt-4 space-y-1.5">
@@ -126,32 +130,19 @@ export default function WhyEmfiPage() {
             <h2 className="text-4xl font-bold tracking-[-0.025em] text-ink md:text-5xl">
               {whyEmfi.accountableTitle}
             </h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-secondary">
+            <p className="mt-4 max-w-4xl text-lg leading-8 text-ink-secondary">
               {whyEmfi.accountableBody}
             </p>
           </FadeIn>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
             {whyEmfi.accountableCards.map((item, i) => (
               <FadeIn key={item.label} delay={i * 0.08}>
                 <div className="group h-full">
                   <article className={`flex h-full flex-col bg-page p-7 text-ink ${cardHover}`}>
-                    <p className="font-mono text-[11px] font-bold tracking-[0.14em] text-brand">
+                    <p className="font-mono text-[12px] font-bold tracking-[0.14em] text-brand">
                       {item.label}
                     </p>
                     <p className="mt-4 text-xl font-bold leading-snug">{item.body}</p>
-                    {"href" in item && item.href ? (
-                      <a
-                        href={item.href}
-                        className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline"
-                      >
-                        See the evidence
-                        <ArrowRight
-                          size={14}
-                          aria-hidden
-                          className="transition-transform duration-200 group-hover:translate-x-1"
-                        />
-                      </a>
-                    ) : null}
                   </article>
                 </div>
               </FadeIn>
@@ -160,7 +151,12 @@ export default function WhyEmfiPage() {
         </Container>
       </section>
 
-      <CtaBand title={whyEmfi.ctaTitle} body={whyEmfi.ctaBody} action={whyEmfi.ctaButton} />
+      <CtaBand
+        title={whyEmfi.ctaTitle}
+        body={whyEmfi.ctaBody}
+        action={whyEmfi.ctaButton}
+        href="/trust"
+      />
     </>
   );
 }

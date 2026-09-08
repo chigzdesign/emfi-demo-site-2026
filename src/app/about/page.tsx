@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { FadeIn } from "@/components/motion/fade-in";
 import { PageHero } from "@/components/sections/page-hero";
+import { DecadeHeroVisual } from "@/components/diagrams/decade-hero-visual";
 import { PersonCard } from "@/components/sections/person-card";
 
 export const metadata = {
@@ -15,7 +16,11 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero title={about.headline} body={about.body} />
+      <PageHero
+        title={about.headline}
+        body={about.body}
+        visual={<DecadeHeroVisual />}
+      />
 
       <section className="border-b border-line bg-subtle">
         <Container className="py-12 md:py-16">
@@ -26,11 +31,11 @@ export default function AboutPage() {
                 {about.yearsTitle}
               </h2>
             </FadeIn>
-            <div className="h-fit rounded-lg border-2 border-brand bg-page p-5 font-mono text-xl text-brand">
+            {/* <div className="h-fit rounded-lg border-2 border-brand bg-page p-5 font-mono text-xl text-brand">
               {about.badge}
               <br />
               <span className="text-sm">{about.badgeSub}</span>
-            </div>
+            </div> */}
           </div>
           <div className="mt-8 flex flex-wrap gap-2">
             {about.themes.map((theme) => (

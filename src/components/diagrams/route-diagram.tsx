@@ -14,7 +14,7 @@ const traditional = [
 export function RouteDiagram({ direct = false }: { direct?: boolean }) {
   if (direct) {
     return (
-      <svg viewBox="0 0 760 200" className="w-full" role="img" aria-label="EMFI direct route">
+      <svg viewBox="0 0 760 230" className="w-full" role="img" aria-label="EMFI direct route">
         <motion.path
           d="M 155 95 L 302 95"
           stroke="var(--action-primary)"
@@ -68,7 +68,7 @@ export function RouteDiagram({ direct = false }: { direct?: boolean }) {
           y={100}
           fill="var(--text-muted)"
           textAnchor="middle"
-          fontSize={11}
+          fontSize={13}
           fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
           fontWeight={600}
         >
@@ -80,7 +80,7 @@ export function RouteDiagram({ direct = false }: { direct?: boolean }) {
           y={96}
           fill="var(--text-inverse)"
           textAnchor="middle"
-          fontSize={12}
+          fontSize={14}
           fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
           fontWeight={700}
         >
@@ -91,7 +91,7 @@ export function RouteDiagram({ direct = false }: { direct?: boolean }) {
           y={112}
           fill="var(--text-inverse)"
           textAnchor="middle"
-          fontSize={8}
+          fontSize={10}
           fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
           fontWeight={500}
           letterSpacing={1}
@@ -113,7 +113,7 @@ export function RouteDiagram({ direct = false }: { direct?: boolean }) {
           y={100}
           fill="var(--text-primary)"
           textAnchor="middle"
-          fontSize={10}
+          fontSize={12}
           fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
           fontWeight={600}
         >
@@ -121,10 +121,10 @@ export function RouteDiagram({ direct = false }: { direct?: boolean }) {
         </text>
         <text
           x={380}
-          y={168}
+          y={188}
           fill="var(--action-primary)"
           textAnchor="middle"
-          fontSize={10}
+          fontSize={12}
           fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
           letterSpacing={2}
         >
@@ -176,7 +176,7 @@ export function RouteDiagram({ direct = false }: { direct?: boolean }) {
               y={88}
               fill="var(--text-primary)"
               textAnchor="middle"
-              fontSize={9}
+              fontSize={11}
               fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
               fontWeight={600}
             >
@@ -188,7 +188,7 @@ export function RouteDiagram({ direct = false }: { direct?: boolean }) {
                 y={138}
                 fill="var(--text-secondary)"
                 textAnchor="middle"
-                fontSize={9}
+                fontSize={11}
                 fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
                 fontWeight={500}
               >
@@ -203,7 +203,7 @@ export function RouteDiagram({ direct = false }: { direct?: boolean }) {
         y={188}
         fill="var(--text-secondary)"
         textAnchor="middle"
-        fontSize={10}
+        fontSize={12}
         fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
         letterSpacing={2}
       >

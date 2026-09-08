@@ -23,7 +23,7 @@ export function CtaBand({
           <h2 className="max-w-4xl text-4xl font-extrabold tracking-[-0.04em] md:text-6xl">
             {title}
           </h2>
-          <p className="mt-6 max-w-xl text-lg font-medium text-ink-inverse-muted">{body}</p>
+          <p className="mt-6 max-w-3xl text-lg font-medium text-ink-inverse-muted">{body}</p>
           {action ? (
             <div className="mt-7">
               <Button href={href} variant="inverse">

@@ -31,21 +31,24 @@ export const whyEmfi = {
     },
   ],
   accountableEyebrow: "Accountable",
-  accountableTitle: "Clear ownership. Independent oversight.",
+  accountableTitle: "Clear responsibility. No institutional runaround.",
   accountableBody:
-    "Defined legal entities, controlled processes and independent regulatory oversight give clients a clear line of accountability.",
+    "A defined relationship, controlled processes and clear ownership when it matters.",
   accountableCards: [
     {
-      label: "Demonstration",
-      body: "Clear legal-entity structure.",
+      label: "CLEAR OWNERSHIP",
+      body: "A defined point of responsibility for the client relationship.",
     },
     {
-      label: "Evidence",
-      body: "FCA · DFSA · CASS · Independent audit",
-      href: "/trust",
+      label: "CONTROLLED PROCESSES",
+      body: "Structured processes with clear responsibility at each stage.",
+    },
+    {
+      label: "ACCOUNTABILITY",
+      body: "Issues have an owner, with a clear path to resolution.",
     },
   ],
-  ctaTitle: "Institutional infrastructure without the institutional layers.",
-  ctaBody: "Execution. Settlement. Custody. Technology. One operating relationship.",
-  ctaButton: "Discuss your requirements",
+  ctaTitle: "The framework behind EMFI.",
+  ctaBody: "Defined entities, regulatory oversight and independent scrutiny underpin how EMFI operates.",
+  ctaButton: "View Trust & Regulatory Evidence",
 };

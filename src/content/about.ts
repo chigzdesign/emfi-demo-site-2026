@@ -3,10 +3,16 @@ export const about = {
   eyebrow: "About",
   headline: "A decade of building direct \naccess.",
   body: "Since 2016, EMFI has developed an institutional investment platform connecting clients with markets, execution and the infrastructure behind the transaction.",
+  heroVisual: {
+    from: "2016",
+    to: "2026",
+    mark: "EMFI",
+    caption: "10 years of expertise",
+  },
   yearsEyebrow: "2016 → 2026",
   yearsTitle: "The evolution of the platform.",
-  badge: "EMFI 10",
-  badgeSub: "2016—2026",
+  badge: "EMFI 2016-2026",
+  badgeSub: "10 years of expertise",
   themes: [
     "Establishment",
     "Research and execution",
