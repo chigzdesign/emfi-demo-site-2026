@@ -1,11 +1,15 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { brandSignPath } from "@/components/brand/logo";
 import { about } from "@/content/about";
 
 const CX = 160;
 const CY = 168;
 const RING = 92;
+const MARK_SIZE = 72;
+const MARK_VIEWBOX = 50;
+const MARK_SCALE = MARK_SIZE / MARK_VIEWBOX;
 const ease = [0.22, 1, 0.36, 1] as const;
 
 function point(angle: number, radius: number) {
@@ -122,26 +126,11 @@ export function DecadeHeroVisual() {
           </motion.g>
         )}
 
-        <rect
-          x={CX - 62}
-          y={CY - 26}
-          width={124}
-          height={52}
-          rx={10}
-          fill="var(--bg-inverse)"
-        />
-        <text
-          x={CX}
-          y={CY + 8}
-          textAnchor="middle"
-          fill="var(--text-inverse)"
-          fontSize={24}
-          fontWeight={800}
-          letterSpacing={4.4}
-          fontFamily="var(--font-inter), ui-sans-serif, system-ui, sans-serif"
+        <g
+          transform={`translate(${CX - MARK_SIZE / 2} ${CY - MARK_SIZE / 2}) scale(${MARK_SCALE})`}
         >
-          {mark}
-        </text>
+          <path fill="var(--bg-inverse)" d={brandSignPath} />
+        </g>
 
         <text
           x={CX}

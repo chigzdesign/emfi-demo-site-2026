@@ -48,7 +48,7 @@ export function Footer() {
   const [london, dubai] = footer.offices;
 
   return (
-    <footer className="border-t-2 border-ink-inverse/25 bg-footer text-ink-inverse-muted">
+    <footer className="border-t-2 border-ink-inverse-muted bg-footer text-ink-inverse-muted">
       <Container className="py-8 md:py-10">
         <div className="grid gap-8 lg:grid-cols-3 lg:gap-10">
           <div>

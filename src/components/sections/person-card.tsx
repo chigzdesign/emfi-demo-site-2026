@@ -1,6 +1,6 @@
 import { about } from "@/content/about";
 
-const placeholderPhoto = "/people/placeholder.svg";
+const placeholderPhoto = "/people/placeholder.jpg";
 
 export function PersonCard({
   person,
@@ -23,7 +23,7 @@ export function PersonCard({
               alt=""
               width={112}
               height={112}
-              className="block h-full w-full object-cover object-[center_20%] [clip-path:circle(50%)]"
+              className="block h-full w-full object-cover object-center [clip-path:circle(50%)]"
             />
           </div>
           <h3 className="mt-6 text-lg font-semibold text-ink">{person.name}</h3>

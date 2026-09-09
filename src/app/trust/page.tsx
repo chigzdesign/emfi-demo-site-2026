@@ -164,7 +164,7 @@ export default function TrustPage() {
         </Container>
       </section>
 
-      <section className="bg-subtle">
+      <section id="regulated-entities" className="scroll-mt-24 bg-subtle">
         <Container className="py-12 md:py-16">
           <FadeIn>
             <Eyebrow>{trust.entitiesEyebrow}</Eyebrow>

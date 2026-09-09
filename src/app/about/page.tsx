@@ -80,7 +80,7 @@ export default function AboutPage() {
           </div>
           <p className="mt-8 text-sm text-ink-muted">
             {about.entitiesNote}{" "}
-            <Link href="/trust" className="font-semibold text-brand hover:underline">
+            <Link href="/trust#regulated-entities" className="font-semibold text-brand hover:underline">
               {about.entitiesCta}
             </Link>
             .
