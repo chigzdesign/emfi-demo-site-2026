@@ -10,6 +10,7 @@ type ButtonProps = {
   type?: "button" | "submit";
   onClick?: () => void;
   showArrow?: boolean;
+  as?: "span";
 };
 
 const variants = {
@@ -40,6 +41,7 @@ export function Button({
   type = "button",
   onClick,
   showArrow = true,
+  as,
 }: ButtonProps) {
   const classes = cn(
     "emfi-btn group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[13px] font-bold tracking-wide",
@@ -54,15 +56,18 @@ export function Button({
     </>
   );
 
-  const control = href ? (
-    <Link href={href} className={classes}>
-      {content}
-    </Link>
-  ) : (
-    <button type={type} onClick={onClick} className={classes}>
-      {content}
-    </button>
-  );
+  const control =
+    as === "span" ? (
+      <span className={classes}>{content}</span>
+    ) : href ? (
+      <Link href={href} className={classes}>
+        {content}
+      </Link>
+    ) : (
+      <button type={type} onClick={onClick} className={classes}>
+        {content}
+      </button>
+    );
 
   return <span className="emfi-btn-hit group inline-flex">{control}</span>;
 }

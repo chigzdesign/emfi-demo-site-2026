@@ -24,7 +24,7 @@ export function AboutTimeline() {
           </h2>
         </FadeIn>
 
-        <ol className="relative mt-8">
+        <ol className="relative mt-6">
           <span
             aria-hidden
             className="pointer-events-none absolute bottom-2 left-[1.15rem] top-2 w-px bg-line md:left-1/2 md:-translate-x-1/2"
@@ -74,21 +74,35 @@ function MilestoneItem({
   reduceMotion: boolean;
 }) {
   const ref = useRef<HTMLLIElement>(null);
-  const inView = useInView(ref, { amount: 0.55, margin: "-30% 0px -15% 0px" });
+  const inView = useInView(ref, {
+    amount: isLast ? 0.35 : 0.55,
+    margin: isLast ? "0px 0px -8% 0px" : "-30% 0px -15% 0px",
+  });
   const [ready, setReady] = useState(false);
+  const [latched, setLatched] = useState(false);
   const left = index % 2 === 0;
 
   useEffect(() => {
     setReady(true);
   }, []);
 
-  const active = isLast || (ready && !reduceMotion && inView);
+  useEffect(() => {
+    if (isLast && inView) setLatched(true);
+  }, [isLast, inView]);
+
+  const active = ready
+    ? reduceMotion
+      ? isLast
+      : isLast
+        ? latched
+        : inView
+    : false;
   const delay = reduceMotion ? 0 : 0.08 + index * 0.07;
 
   return (
     <li
       ref={ref}
-      className="relative grid grid-cols-[2.3rem_1fr] items-center gap-x-4 pb-8 last:pb-0 md:grid-cols-[1fr_2.5rem_1fr] md:gap-x-0 md:pb-12"
+      className="relative grid grid-cols-[2.3rem_1fr] items-center gap-x-4 pb-5 last:pb-0 md:grid-cols-[1fr_2.5rem_1fr] md:gap-x-0 md:pb-7"
     >
       <div className="relative z-10 col-start-1 row-start-1 flex justify-center md:col-start-2">
         <span className="relative flex h-3.5 w-3.5 items-center justify-center">
@@ -102,7 +116,7 @@ function MilestoneItem({
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.38, delay, ease }}
           />
-          {isLast && !reduceMotion ? (
+          {isLast && active && !reduceMotion ? (
             <motion.span
               aria-hidden
               className="pointer-events-none absolute inset-0 rounded-full bg-brand/35"
@@ -129,9 +143,9 @@ function MilestoneItem({
 
       <motion.article
         className={cn(
-          "group relative col-start-2 row-start-1 rounded-lg border px-5 py-4 emfi-card-lift md:row-start-1 md:px-6 md:py-5",
+          "group relative col-start-2 row-start-1 rounded-lg border px-4 py-3 emfi-card-lift md:row-start-1 md:px-5 md:py-3.5",
           left ? "md:col-start-1 md:mr-1 md:text-right" : "md:col-start-3 md:ml-1",
-          isLast || active
+          active
             ? "border-brand bg-page"
             : "border-line bg-card hover:bg-page",
         )}
@@ -147,7 +161,7 @@ function MilestoneItem({
             left
               ? "right-0 border-r border-t [transform:translate(50%,-50%)_rotate(45deg)]"
               : "left-0 border-b border-l [transform:translate(-50%,-50%)_rotate(45deg)]",
-            isLast || active
+            active
               ? "border-brand bg-page"
               : "border-line bg-card group-hover:bg-page",
           )}
@@ -170,10 +184,10 @@ function MilestoneItem({
             {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
           </p>
         </div>
-        <h3 className="relative mt-1.5 text-lg font-bold tracking-[-0.02em] text-ink md:text-xl">
+        <h3 className="relative mt-1 text-lg font-bold tracking-[-0.02em] text-ink md:text-xl">
           {title}
         </h3>
-        <p className="relative mt-1.5 text-sm font-medium leading-6 text-ink-secondary md:text-[15px] md:leading-7">
+        <p className="relative mt-1 text-sm font-medium leading-6 text-ink-secondary md:text-[15px] md:leading-6">
           {desc}
         </p>
       </motion.article>

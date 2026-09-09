@@ -6,18 +6,23 @@ import { about } from "@/content/about";
 const CX = 160;
 const CY = 168;
 const RING = 92;
+const ease = [0.22, 1, 0.36, 1] as const;
 
-function tick(i: number, inner: number, outer: number) {
-  const a = ((i * 36 - 90) * Math.PI) / 180;
-  const c = Math.cos(a);
-  const s = Math.sin(a);
+function point(angle: number, radius: number) {
+  const a = (angle * Math.PI) / 180;
   return {
-    x1: CX + c * inner,
-    y1: CY + s * inner,
-    x2: CX + c * outer,
-    y2: CY + s * outer,
+    x: CX + Math.cos(a) * radius,
+    y: CY + Math.sin(a) * radius,
   };
 }
+
+function tick(angle: number, inner: number, outer: number) {
+  const a = point(angle, inner);
+  const b = point(angle, outer);
+  return { x1: a.x, y1: a.y, x2: b.x, y2: b.y };
+}
+
+const ARC = `M ${CX} ${CY - RING} A ${RING} ${RING} 0 0 1 ${CX} ${CY + RING}`;
 
 export function DecadeHeroVisual() {
   const reduceMotion = useReducedMotion();
@@ -26,39 +31,46 @@ export function DecadeHeroVisual() {
 
   return (
     <figure className="relative mx-auto w-full max-w-[17rem]" aria-label={label}>
-      <svg viewBox="0 0 320 360" className="h-auto w-full" role="img" aria-hidden>
-        <text
-          x={CX}
-          y={CY + 38}
-          textAnchor="middle"
-          fill="var(--action-primary)"
-          fillOpacity={0.12}
-          fontSize={168}
-          fontWeight={800}
-          letterSpacing={-10}
-          fontFamily="var(--font-inter), ui-sans-serif, system-ui, sans-serif"
-        >
-          10
-        </text>
-        <circle
-          cx={CX}
-          cy={CY}
-          r={RING + 16}
+      <svg viewBox="0 0 320 328" className="h-auto w-full" role="img" aria-hidden>
+        <path
+          d={ARC}
           fill="none"
           stroke="var(--action-primary)"
-          strokeOpacity={0.22}
-          strokeWidth={1.25}
-        />
-        <circle
-          cx={CX}
-          cy={CY}
-          r={RING}
-          fill="none"
-          stroke="var(--action-primary)"
+          strokeOpacity={0.18}
           strokeWidth={2.5}
+          strokeLinecap="round"
         />
-        {Array.from({ length: 10 }, (_, i) => {
-          const t = tick(i, RING - 7, RING + 7);
+        {reduceMotion ? (
+          <path
+            d={ARC}
+            fill="none"
+            stroke="var(--action-primary)"
+            strokeWidth={2.5}
+            strokeLinecap="round"
+          />
+        ) : (
+          <motion.path
+            d={ARC}
+            fill="none"
+            stroke="var(--action-primary)"
+            strokeWidth={2.5}
+            strokeLinecap="round"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: [0, 0, 1, 1] }}
+            transition={{
+              duration: 8,
+              times: [0, 0.08, 0.78, 1],
+              repeat: Infinity,
+              repeatDelay: 1.1,
+              ease,
+            }}
+          />
+        )}
+
+        {Array.from({ length: 11 }, (_, i) => {
+          const angle = -90 + i * 18;
+          const t = tick(angle, RING - 7, RING + 7);
+          const major = i === 0 || i === 10;
           return (
             <line
               key={i}
@@ -67,22 +79,36 @@ export function DecadeHeroVisual() {
               x2={t.x2}
               y2={t.y2}
               stroke="var(--action-primary)"
-              strokeOpacity={i % 5 === 0 ? 0.9 : 0.35}
-              strokeWidth={i % 5 === 0 ? 2 : 1.25}
+              strokeOpacity={major ? 0.9 : 0.32}
+              strokeWidth={major ? 2 : 1.25}
               strokeLinecap="round"
             />
           );
         })}
+
         <circle cx={CX} cy={CY - RING} r={3.5} fill="var(--action-primary)" />
         <circle cx={CX} cy={CY + RING} r={3.5} fill="var(--action-primary)" />
-        {reduceMotion ? null : (
+
+        {reduceMotion ? (
+          <g>
+            <circle
+              cx={CX}
+              cy={CY + RING}
+              r={8}
+              fill="color-mix(in srgb, var(--action-primary) 22%, transparent)"
+            />
+            <circle cx={CX} cy={CY + RING} r={3.5} fill="var(--action-primary)" />
+          </g>
+        ) : (
           <motion.g
             initial={{ rotate: -90 }}
-            animate={{ rotate: 270 }}
+            animate={{ rotate: [-90, -90, 90, 90] }}
             transition={{
-              duration: 14,
+              duration: 8,
+              times: [0, 0.08, 0.78, 1],
               repeat: Infinity,
-              ease: "linear",
+              repeatDelay: 1.1,
+              ease,
             }}
             transformTemplate={({ rotate }) => `rotate(${rotate} ${CX} ${CY})`}
           >
@@ -95,26 +121,28 @@ export function DecadeHeroVisual() {
             <circle cx={CX + RING} cy={CY} r={3.5} fill="var(--action-primary)" />
           </motion.g>
         )}
+
         <rect
-          x={CX - 58}
-          y={CY - 24}
-          width={116}
-          height={48}
+          x={CX - 62}
+          y={CY - 26}
+          width={124}
+          height={52}
           rx={10}
           fill="var(--bg-inverse)"
         />
         <text
           x={CX}
-          y={CY + 7}
+          y={CY + 8}
           textAnchor="middle"
           fill="var(--text-inverse)"
-          fontSize={22}
+          fontSize={24}
           fontWeight={800}
-          letterSpacing={4.2}
+          letterSpacing={4.4}
           fontFamily="var(--font-inter), ui-sans-serif, system-ui, sans-serif"
         >
           {mark}
         </text>
+
         <text
           x={CX}
           y={42}
@@ -129,7 +157,7 @@ export function DecadeHeroVisual() {
         </text>
         <text
           x={CX}
-          y={318}
+          y={314}
           textAnchor="middle"
           fill="var(--action-primary)"
           fontSize={15}
@@ -139,19 +167,10 @@ export function DecadeHeroVisual() {
         >
           {to}
         </text>
-        <text
-          x={CX}
-          y={344}
-          textAnchor="middle"
-          fill="var(--text-muted)"
-          fontSize={10}
-          fontWeight={700}
-          letterSpacing={2.4}
-          fontFamily="var(--font-ibm-plex-mono), ui-monospace, monospace"
-        >
-          {caption.toUpperCase()}
-        </text>
       </svg>
+      <p className="mx-auto mt-2 w-fit rounded-lg bg-inverse px-4 py-2.5 text-center font-mono text-[12px] font-extrabold uppercase tracking-[0.16em] text-ink-inverse">
+        {caption}
+      </p>
     </figure>
   );
 }

@@ -409,6 +409,13 @@
   .emfi-person-card:focus-within .emfi-person-card-back {
     opacity: 1;
   }
+
+  .emfi-cta-section,
+  .emfi-cta-fill,
+  .emfi-cta-section .emfi-btn,
+  .emfi-cta-section .emfi-btn-arrow {
+    transition: none;
+  }
 }
 
 html,
@@ -522,4 +529,65 @@ body {
     box-shadow: var(--elevation-card-hover);
     z-index: 2;
   }
+
+  .emfi-cta-section:hover .emfi-btn {
+    transform: translateY(-6px);
+    box-shadow: var(--elevation-card-hover);
+    z-index: 2;
+  }
+
+  .emfi-cta-section:hover .emfi-btn-arrow {
+    transform: rotate(-45deg);
+  }
+}
+
+.emfi-cta-section {
+  --cta-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.emfi-cta-fill {
+  pointer-events: none;
+  position: absolute;
+  top: 2.5rem;
+  right: max(1.5rem, calc((100% - 1440px) / 2 + 1.5rem));
+  bottom: 2.5rem;
+  left: max(1.5rem, calc((100% - 1440px) / 2 + 1.5rem));
+  z-index: 0;
+  border-radius: var(--radius-surface);
+  background: var(--bg-inverse);
+  transition:
+    top 0.7s var(--cta-ease),
+    right 0.7s var(--cta-ease),
+    bottom 0.7s var(--cta-ease),
+    left 0.7s var(--cta-ease),
+    border-radius 0.7s var(--cta-ease);
+}
+
+@media (min-width: 768px) {
+  .emfi-cta-fill {
+    top: 3.5rem;
+    right: max(2.5rem, calc((100% - 1440px) / 2 + 2.5rem));
+    bottom: 3.5rem;
+    left: max(2.5rem, calc((100% - 1440px) / 2 + 2.5rem));
+  }
+}
+
+.emfi-cta-section:hover .emfi-cta-fill,
+.emfi-cta-section:focus-visible .emfi-cta-fill {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+}
+
+.emfi-cta-section .emfi-btn {
+  transition:
+    transform 0.7s var(--cta-ease),
+    box-shadow 0.7s var(--cta-ease),
+    background-color 0.55s ease;
+}
+
+.emfi-cta-section .emfi-btn-arrow {
+  transition: transform 0.7s var(--cta-ease);
 }

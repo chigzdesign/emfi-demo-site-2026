@@ -44,7 +44,7 @@ export function PersonCard({
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-ink-inverse-muted">
             {person.role}
           </p>
-          <p className="mx-auto flex flex-1 items-center justify-center max-w-[15.5rem] text-[1.35rem] font-semibold leading-[1.35] tracking-[-0.035em] text-ink-inverse">
+          <p className="mx-auto flex max-w-[15.5rem] flex-1 items-center justify-center text-[calc(1.35rem-2px)] font-semibold leading-[1.35] tracking-[-0.035em] text-ink-inverse">
             {person.description}
           </p>
           <p className="text-[13px] font-medium tracking-[0.01em] text-ink-inverse-muted">

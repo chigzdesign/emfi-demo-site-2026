@@ -92,6 +92,7 @@ export default function AboutPage() {
         title={about.ctaTitle}
         body={about.ctaBody}
         action={about.ctaButton}
+        sectionLink
       />
     </>
   );
