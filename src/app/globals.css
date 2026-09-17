@@ -130,6 +130,18 @@
   animation: emfi-sign-glow 9s ease-in-out infinite;
 }
 
+.emfi-hero-bg-shift {
+  background: linear-gradient(
+    120deg,
+    var(--color-white),
+    color-mix(in srgb, var(--color-blue-25) 70%, var(--color-white)),
+    color-mix(in srgb, var(--color-blue-50) 55%, var(--color-white)),
+    var(--color-white)
+  );
+  background-size: 300% 300%;
+  animation: emfi-hero-bg-shift 16s ease-in-out infinite;
+}
+
 .emfi-hero-glow-tl {
   background: radial-gradient(
     ellipse 58% 52% at 0% 0%,
@@ -156,6 +168,34 @@
   animation: emfi-page-progress 3s linear infinite;
   width: 100%;
   transform-origin: left;
+}
+
+.emfi-globe-spin {
+  animation: emfi-globe-spin 24s linear infinite;
+}
+
+.emfi-globe-pulse {
+  animation: emfi-globe-pulse 6s ease-in-out infinite;
+}
+
+.emfi-globe-photo {
+  animation: emfi-globe-photo-pan 18s ease-in-out infinite alternate;
+}
+
+.emfi-chain-pulse {
+  animation: emfi-chain-pulse 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.emfi-float {
+  animation: emfi-float 6s ease-in-out infinite;
+}
+
+.emfi-icon-pulse {
+  animation: emfi-icon-pulse 2.6s ease-in-out infinite;
+}
+
+.emfi-bar-grow {
+  animation: emfi-bar-grow 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes emfi-page-progress {
@@ -315,6 +355,96 @@
   }
 }
 
+@keyframes emfi-globe-spin {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 160px 0;
+  }
+}
+
+@keyframes emfi-globe-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes emfi-globe-photo-pan {
+  from {
+    transform: scale(1) translateY(0);
+  }
+  to {
+    transform: scale(1.08) translateY(-1.5%);
+  }
+}
+
+@keyframes emfi-hero-bg-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes emfi-bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes emfi-icon-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1.65);
+  }
+}
+
+@keyframes emfi-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes emfi-chain-pulse {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
 @keyframes emfi-scan {
   0% {
     transform: translateY(-12px);
@@ -351,7 +481,15 @@
   .emfi-sign-glow,
   .emfi-live-dot,
   .emfi-page-progress,
-  .emfi-scan {
+  .emfi-scan,
+  .emfi-globe-spin,
+  .emfi-globe-pulse,
+  .emfi-globe-photo,
+  .emfi-chain-pulse,
+  .emfi-float,
+  .emfi-icon-pulse,
+  .emfi-bar-grow,
+  .emfi-hero-bg-shift {
     animation: none;
   }
 

@@ -14,6 +14,7 @@ export const home = {
   chainTitle: "Client → EMFI → Institutional infrastructure",
   chainBody:
     "EMFI connects clients into institutional infrastructure through a single operating relationship. Euroclear is one important part of that infrastructure — not the whole proposition.",
+  chainCta: "Explore our infrastructure",
   chainNodes: [
     { label: "Client", sub: "Instructions / portfolio" },
     { label: "EMFI", sub: "One operating relationship" },
