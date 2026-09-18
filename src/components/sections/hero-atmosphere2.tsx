@@ -29,7 +29,6 @@ export function HeroAtmosphere2({
       aria-hidden
     >
       <div className="absolute inset-0 bg-page" />
-      <div className="emfi-hero-bg-shift absolute inset-0" />
       <div className="emfi-hero-glow-tl absolute inset-0" />
       <div className="emfi-hero-glow-br absolute inset-0" />
       {compact ? (

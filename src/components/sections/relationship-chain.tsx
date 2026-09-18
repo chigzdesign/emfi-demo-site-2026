@@ -65,24 +65,7 @@ export function RelationshipChain() {
           </div>
         </FadeIn>
 
-        <div className="relative z-10 mt-24 pt-8 md:mt-14 md:pt-10">
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-3">
-            {home.chainInfra.map((item, i) => (
-              <FadeIn
-                key={item.name}
-                delay={i * 0.06}
-                className="flex items-center gap-3"
-              >
-                <span className="font-mono text-[12px] font-bold uppercase tracking-[0.18em] text-ink-inverse-muted">
-                  {item.name}
-                </span>
-                {i < home.chainInfra.length - 1 ? (
-                  <span className="h-4 w-px bg-line-inverse/50" aria-hidden />
-                ) : null}
-              </FadeIn>
-            ))}
-          </div>
-        </div>
+
       </Container>
     </section>
   );

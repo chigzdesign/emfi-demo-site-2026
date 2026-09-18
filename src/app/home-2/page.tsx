@@ -4,14 +4,19 @@ import { home } from "@/content/home";
 import { cn } from "@/lib/cn";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { FadeIn, FadeInOnLoad } from "@/components/motion/fade-in";
-import { LogoLoop } from "@/components/brand/logo-loop";
-import { HeroAtmosphere2 } from "@/components/sections/hero-atmosphere2";
+import { HeroInfrastructureGraphic } from "@/components/sections/hero-infrastructure-graphic";
 import { RelationshipChain } from "@/components/sections/relationship-chain";
-import { GlobalPresence } from "@/components/sections/global-presence";
-import { CtaBand } from "@/components/sections/cta-band";
+import { HeroAtmosphere2 } from "@/components/sections/hero-atmosphere2";
+import { PlatformSection } from "@/components/sections/platform-section";
+import { WhyEmfiSection } from "@/components/sections/why-emfi-section";
+import { EvidenceSection } from "@/components/sections/evidence-section";
+import { WhoWeServeSection } from "@/components/sections/who-we-serve-section";
+import { DecadeSection } from "@/components/sections/decade-section";
+import { ClientPerspectiveSection } from "@/components/sections/client-perspective-section";
+import { GlobalPresenceSection } from "@/components/sections/global-presence-section";
+import { FinalCtaSection } from "@/components/sections/final-cta-section";
 
 const serviceIcons = [BarChart3, ShieldCheck, PieChart];
 
@@ -65,9 +70,7 @@ export default function HomePage() {
             </div>
 
             <FadeInOnLoad delay={0.18}>
-              <div className="emfi-float flex items-center justify-center">
-                <LogoLoop className="h-56 w-56 md:h-80 md:w-80 lg:h-[420px] lg:w-[420px]" />
-              </div>
+              <HeroInfrastructureGraphic />
             </FadeInOnLoad>
           </div>
         </Container>
@@ -159,168 +162,21 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-subtle">
-        <Container className="py-12 md:py-16">
-          <FadeIn>
-            <Eyebrow>{home.demoEyebrow}</Eyebrow>
-            <h2 className="max-w-3xl text-4xl font-extrabold tracking-[-0.035em] text-ink md:text-5xl">
-              {home.demoTitle}
-            </h2>
-            <p className="mt-4 max-w-2xl text-lg font-medium leading-8 text-ink-secondary">
-              {home.demoBody}
-            </p>
-          </FadeIn>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {home.demos.map((item, i) => (
-              <FadeIn key={item.title} delay={i * 0.06}>
-                <Link
-                  href={item.href}
-                  className="block rounded-lg border border-line bg-page p-6 emfi-card-lift hover:bg-card"
-                >
-                  <p className="font-mono text-[10px] font-bold tracking-[0.14em] text-brand">
-                    {item.label}
-                  </p>
-                  <h3 className="mt-4 text-lg font-bold text-ink">{item.title}</h3>
-                  <span className="mt-6 inline-flex items-center text-[12px] font-bold text-ink">
-                    Open <ArrowRight size={13} className="ml-2" />
-                  </span>
-                </Link>
-              </FadeIn>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <PlatformSection />
 
-      <section>
-        <Container className="py-12 md:py-16">
-          <FadeIn>
-            <Eyebrow>{home.whyEyebrow}</Eyebrow>
-            <h2 className="max-w-3xl text-4xl font-extrabold tracking-[-0.035em] text-ink md:text-5xl">
-              {home.whyTitle}
-            </h2>
-            <p className="mt-4 max-w-2xl text-lg font-medium leading-8 text-ink-secondary">
-              {home.whyBody}
-            </p>
-          </FadeIn>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {home.why.map(([title, body], i) => (
-              <FadeIn key={title} delay={i * 0.08}>
-                <Card>
-                  <h3 className="text-2xl font-bold text-ink">{title}</h3>
-                  <p className="mt-4 text-sm font-medium leading-7 text-ink-secondary">
-                    {body}
-                  </p>
-                </Card>
-              </FadeIn>
-            ))}
-          </div>
-          <div className="mt-8">
-            <Button href="/why-emfi" variant="outline">
-              {home.whyCta}
-            </Button>
-          </div>
-        </Container>
-      </section>
+      <WhyEmfiSection />
 
-      <section className="bg-subtle">
-        <Container className="py-12 md:py-16">
-          <FadeIn>
-            <Eyebrow>{home.voiceEyebrow}</Eyebrow>
-            <h2 className="max-w-3xl text-4xl font-extrabold tracking-[-0.035em] text-ink md:text-5xl">
-              {home.voiceTitle}
-            </h2>
-          </FadeIn>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {home.quotes.map((quote, i) => (
-              <FadeIn key={quote.name} delay={i * 0.08}>
-                <article className="flex h-full flex-col rounded-xl border border-line bg-page p-7 md:p-8 emfi-card-lift">
-                  <p className="font-mono text-[10px] font-bold tracking-[0.14em] text-brand">
-                    {quote.lens}
-                  </p>
-                  <p className="mt-5 flex-1 text-xl font-medium leading-8 tracking-[-0.02em] text-ink">
-                    {quote.text}
-                  </p>
-                  <p className="mt-6 text-sm font-bold text-ink">{quote.name}</p>
-                  <p className="mt-1 font-mono text-[11px] text-ink-muted">
-                    {quote.firm}
-                  </p>
-                </article>
-              </FadeIn>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <EvidenceSection />
 
-      <section>
-        <Container className="py-12 md:py-16">
-          <FadeIn>
-            <Eyebrow>{home.trustEyebrow}</Eyebrow>
-            <h2 className="max-w-3xl text-4xl font-extrabold tracking-[-0.035em] text-ink md:text-5xl">
-              {home.trustTitle}
-            </h2>
-            <p className="mt-4 max-w-2xl text-lg font-medium leading-8 text-ink-secondary">
-              {home.trustBody}
-            </p>
-          </FadeIn>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {home.trustSignals.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-line bg-subtle px-5 py-3 font-mono text-[12px] font-bold tracking-[0.12em] text-ink"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-          <div className="mt-8">
-            <Button href="/trust">{home.trustCta}</Button>
-          </div>
-        </Container>
-      </section>
+      <WhoWeServeSection />
 
-      <GlobalPresence />
+      <DecadeSection />
 
-      <section className="bg-subtle">
-        <Container className="py-12 md:py-16">
-          <div className="flex flex-col justify-between gap-8 md:flex-row">
-            <FadeIn>
-              <Eyebrow>{home.anniversaryEyebrow}</Eyebrow>
-              <h2 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-[-0.035em] text-ink md:text-6xl">
-                {home.anniversaryTitle}
-              </h2>
-            </FadeIn>
-            <div className="h-fit rounded-lg border-2 border-brand bg-page p-5 font-mono text-xl font-bold text-brand">
-              {home.anniversaryBadge}
-              <br />
-              <span className="text-sm font-bold">{home.anniversaryBadgeSub}</span>
-            </div>
-          </div>
-          <div className="relative mt-10 md:mt-12">
-            <span
-              aria-hidden
-              className="pointer-events-none absolute bottom-2 left-2 top-2 w-0.5 bg-brand md:bottom-auto md:left-[8px] md:right-[8px] md:top-2 md:h-0.5 md:w-auto"
-            />
-            <div className="grid gap-8 md:grid-cols-7 md:gap-4">
-              {home.milestones.map(([year, title, desc], i) => (
-                <FadeIn
-                  key={`${year}-${title}`}
-                  delay={i * 0.05}
-                  className="relative pl-8 md:min-h-[220px] md:pl-0"
-                >
-                  <span className="absolute left-0 top-0 z-10 block h-4 w-4 rounded-sm bg-brand ring-[6px] ring-subtle md:relative md:mb-5" />
-                  <p className="font-mono text-xs font-bold text-brand">{year}</p>
-                  <h3 className="mt-3 text-sm font-bold leading-5 text-ink">{title}</h3>
-                  <p className="mt-2 text-sm font-medium leading-5 text-ink-secondary">
-                    {desc}
-                  </p>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
+      <ClientPerspectiveSection />
 
-      <CtaBand title={home.ctaTitle} body={home.ctaBody} action={home.ctaButton} />
+      <GlobalPresenceSection />
+
+      <FinalCtaSection />
     </>
   );
 }

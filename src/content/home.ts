@@ -29,26 +29,46 @@ export const home = {
   infraNote:
     "These are the institutional relationships and infrastructure through which EMFI operates. Descriptors are draft pending legal and operational review.",
   servicesEyebrow: "Services",
-  servicesTitle: "One relationship. Fewer layers.",
-  servicesBody: "Three pillars. Not a catalogue of extra categories.",
+  servicesTitle: "The infrastructure behind the transaction.",
+  servicesBody: "EMFI brings together research and execution, settlement and custody, and wealth and asset management to support the investment lifecycle.",
   services: [
     [
       "Research & Execution",
-      "Research that supports the investment decision. Execution that reaches the relevant markets and securities.",
+      "Research supports investment decisions, while execution provides access to relevant markets and securities.",
       "/services/research-execution",
     ],
     [
       "Settlement & Custody",
-      "The infrastructure behind the transaction — settlement, custody, asset servicing and operational visibility.",
+      "Settlement, custody and asset servicing support the investment lifecycle from trade completion through ongoing asset administration.",
       "/services/settlement-custody",
     ],
     [
       "Wealth & Asset Management",
-      "MiFID wealth management, AIFMD asset management, and institutional rails for professional counterparties.",
+      "We provide wealth management, asset management and institutional investment solutions for professional clients and counterparties.",
       "/services/wealth-asset-management",
     ],
   ] as const,
   servicesCta: "Explore this service",
+  platformIndex: "04",
+  platformEyebrow: "The EMFI Platform",
+  platformHeadline: "Technology that keeps the investment process connected.",
+  platformSubtitle:
+    "EMFI uses technology to provide visibility across research, execution, settlement and custody, while experienced teams manage the activity that requires judgement.",
+  platformAreas: [
+    [
+      "Market Intelligence",
+      "Research and market information to support investment decisions.",
+    ],
+    [
+      "Market Connectivity",
+      "Technology that connects clients with relevant markets and securities.",
+    ],
+    [
+      "Operational Visibility",
+      "Information across the investment lifecycle, from execution through settlement and custody.",
+    ],
+  ] as const,
+  platformCta: "See how EMFI works",
   demoEyebrow: "Switched on",
   demoTitle: "See how EMFI works.",
   demoBody:
@@ -85,6 +105,53 @@ export const home = {
     ["Accountable", "Clear ownership, regulated entities, controlled processes and independent oversight."],
   ] as const,
   whyCta: "Why EMFI",
+  whyEmfi: {
+    eyebrow: "Why EMFI",
+    title: "Built around the way professional clients work.",
+    body: "EMFI provides an independent route into institutional execution, settlement and custody infrastructure, supported by responsive service and clear operational responsibility.",
+    areas: [
+      [
+        "Direct Access",
+        "Established institutional relationships provide a direct route into relevant market infrastructure.",
+      ],
+      [
+        "Responsive Service",
+        "Clients work with experienced teams that remain close to their requirements and activity.",
+      ],
+      [
+        "Clear Responsibility",
+        "Defined entities, responsibilities and processes make the operating model easier to understand.",
+      ],
+    ] as const,
+    cta: "Discover Why EMFI",
+  },
+  whoWeServe: {
+    eyebrow: "Who We Serve",
+    title: "Institutional by design. Accessible by choice.",
+    body: "EMFI provides professional clients with access to institutional execution, settlement, custody and investment infrastructure through a regulated operating model.",
+    segments: [
+      [
+        "Financial Institutions",
+        "Use EMFI as a primary provider or as an independent execution, settlement and custody route alongside an existing global custodian.",
+        "Explore Financial Institutions",
+        "/contact",
+      ],
+      [
+        "Asset Managers & Funds",
+        "Access execution, settlement and custody infrastructure supported by EMFI's institutional operating team and technology.",
+        "Explore Asset Managers & Funds",
+        "/contact",
+      ],
+      [
+        "Wealth Managers & DFMs",
+        "Access institutional execution, settlement, custody and investment infrastructure within a professional-client framework.",
+        "Explore Wealth Managers & DFMs",
+        "/contact",
+      ],
+    ] as const,
+    cta: "Explore who we serve",
+    ctaHref: "/contact",
+  },
   voiceEyebrow: "Testimonials",
   voiceTitle: "Trusted across the investment ecosystem.",
   quotes: [
@@ -107,12 +174,45 @@ export const home = {
       lens: "Infrastructure / technology",
     },
   ],
+  clientPerspective: {
+    eyebrow: "Client Perspective",
+    title: "What working with EMFI looks like in practice.",
+    body: "Clients use EMFI's research, execution, technology and infrastructure to support different parts of their investment activity.",
+    descriptors: {
+      Seaport: "Research, market expertise and execution",
+      "Lapa Investment Management": "Control, flexibility and responsiveness",
+      Trumid: "Technology, connectivity and institutional infrastructure",
+    } as Record<string, string>,
+    cta: "View client perspectives",
+    ctaHref: "/contact",
+  },
   trustEyebrow: "Trust",
   trustTitle: "Authorised. Regulated. Auditable.",
   trustBody:
     "Evidence, not adjectives. Regulators, client-asset rules, independent audit and institutional infrastructure.",
   trustCta: "See the evidence",
   trustSignals: ["FCA", "DFSA", "CIMA", "CASS", "MiFID", "AIFMD"] as const,
+  evidence: {
+    eyebrow: "The Evidence Behind EMFI",
+    title: "See how EMFI is structured and governed.",
+    body: "Our legal entities, regulatory frameworks, controls and independent external scrutiny provide the evidence behind how EMFI operates.",
+    areas: [
+      [
+        "Regulatory Frameworks",
+        "Relevant regulatory permissions and oversight for EMFI entities and activities.",
+      ],
+      [
+        "Client Asset & Safeguarding",
+        "The frameworks and controls supporting the handling and protection of client assets.",
+      ],
+      [
+        "Independent Scrutiny",
+        "External audit and independent oversight provide additional evidence of EMFI's operating framework.",
+      ],
+    ] as const,
+    cta: "Explore Trust & Regulatory Evidence",
+    ctaHref: "/trust",
+  },
   presenceEyebrow: "Geography",
   presenceTitle: "Cayman. London. Dubai.",
   presenceBody:
@@ -122,6 +222,27 @@ export const home = {
     ["London", "UK operations", "UK operations and FCA-regulated entities."],
     ["Dubai", "DIFC", "EMFI Capital (DIFC) Limited — DFSA-regulated operations."],
   ] as const,
+  globalPresence: {
+    eyebrow: "Global Presence",
+    title: "One group. Multiple regulated markets.",
+    body: "EMFI operates through entities and teams across the Cayman Islands, London and Dubai, with services provided according to the relevant entity, jurisdiction and client classification.",
+    locations: [
+      [
+        "London",
+        "UK operations and relevant regulated entities supporting EMFI's institutional business.",
+      ],
+      [
+        "Dubai",
+        "EMFI Capital (DIFC) Limited is a DIFC company authorised and regulated by the Dubai Financial Services Authority.",
+      ],
+      [
+        "Cayman Islands",
+        "Enquiries relating to EMFI Fund and Cayman-related matters.",
+      ],
+    ] as const,
+    cta: "Explore EMFI's structure",
+    ctaHref: "/about",
+  },
   anniversaryEyebrow: "Ten years / 2016—2026",
   anniversaryTitle: "A decade of building direct access.",
   anniversaryBadge: "EMFI 10",
@@ -143,7 +264,54 @@ export const home = {
     ["2025", "DIFC"],
     ["2026", "Ten years"],
   ] as const,
+  decade: {
+    eyebrow: "Ten years / 2016—2026",
+    title: "A decade of building direct access.",
+    body: "Since 2016, EMFI has expanded from institutional emerging-market execution into settlement, custody, research, technology and investment services.",
+    badge: "EMFI 10",
+    badgeSub: "2016—2026",
+    milestones: [
+      ["2016", "Establishment", "EMFI Securities incorporated."],
+      [
+        "2017",
+        "Authorised",
+        "FCA authorisation and first institutional trading relationships.",
+      ],
+      [
+        "2018",
+        "Group & Capital",
+        "EMFI Group and EMFI Capital established, expanding into custody and investment services.",
+      ],
+      [
+        "TBC",
+        "Euroclear participation",
+        "Direct Euroclear participation.",
+      ],
+      [
+        "TBC",
+        "Platform launch",
+        "Proprietary web execution and portfolio platform launched.",
+      ],
+      ["2025", "EMTA", "EMFI joined EMTA."],
+      ["2025", "DIFC", "Dubai regulated presence established in DIFC."],
+      [
+        "2026",
+        "Ten years",
+        "Ten-year platform refresh and next stage of institutional and selected wealth-manager expansion.",
+      ],
+    ] as const,
+    cta: "Explore our story",
+    ctaHref: "/about",
+  },
   ctaTitle: "Discuss your requirements.",
   ctaBody: "Tell us where the operating model needs a more direct connection.",
   ctaButton: "Contact EMFI",
+  finalCta: {
+    title: "Tell us what you're looking to achieve.",
+    body: "Our team can explain the relevant EMFI service, operating structure and next steps based on your requirements.",
+    primaryCta: "Discuss your requirements",
+    primaryHref: "/contact",
+    secondaryCta: "Explore our services",
+    secondaryHref: "/services",
+  },
 };
