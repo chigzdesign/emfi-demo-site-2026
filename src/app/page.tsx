@@ -162,7 +162,6 @@ export default function HomePage() {
         </Container>
       </section>
 
-
       <WhyEmfiSection />
 
       <EvidenceSection />
