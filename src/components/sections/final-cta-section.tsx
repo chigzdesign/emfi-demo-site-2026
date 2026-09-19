@@ -9,20 +9,32 @@ export function FinalCtaSection() {
       <Container className="py-12 md:py-20">
         <div
           className="relative overflow-hidden rounded-3xl px-6 py-14 text-center md:px-16 md:py-20"
-          style={{
-            background:
-              "linear-gradient(135deg, var(--color-blue-700) 0%, var(--color-blue-500) 45%, var(--color-blue-900) 100%)",
-          }}
+          style={{ background: "var(--color-blue-500)" }}
         >
           <span
             aria-hidden
             className="emfi-cta-band-glow pointer-events-none absolute left-[-10%] top-[15%] h-[380px] w-[380px] rounded-full opacity-0 blur-[100px] md:h-[560px] md:w-[560px]"
-            style={{ background: "var(--color-blue-300)" }}
+            style={{ background: "var(--color-blue-100)" }}
           />
           <span
             aria-hidden
             className="pointer-events-none absolute -bottom-[30%] right-[-10%] h-[360px] w-[360px] rounded-full opacity-10 blur-[110px]"
-            style={{ background: "var(--color-blue-200)" }}
+            style={{ background: "var(--color-blue-50)" }}
+          />
+          <span
+            aria-hidden
+            className="emfi-cta-band-glow pointer-events-none absolute right-[-15%] top-[-10%] h-[320px] w-[320px] rounded-full opacity-0 blur-[100px] md:h-[440px] md:w-[440px]"
+            style={{ background: "var(--color-blue-200)", animationDelay: "-4s" }}
+          />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute -top-[20%] left-[30%] h-[300px] w-[300px] rounded-full opacity-[0.06] blur-[120px]"
+            style={{ background: "var(--color-blue-50)" }}
+          />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute bottom-[-15%] left-[10%] h-[260px] w-[260px] rounded-full opacity-10 blur-[100px]"
+            style={{ background: "var(--color-blue-100)" }}
           />
 
           <div className="relative z-10">

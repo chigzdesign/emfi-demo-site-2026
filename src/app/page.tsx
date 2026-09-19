@@ -162,17 +162,16 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <PlatformSection />
+
 
       <WhyEmfiSection />
 
       <EvidenceSection />
 
       <WhoWeServeSection />
-
+      <PlatformSection />
       <DecadeSection />
 
-      <ClientPerspectiveSection />
 
       <GlobalPresenceSection />
 

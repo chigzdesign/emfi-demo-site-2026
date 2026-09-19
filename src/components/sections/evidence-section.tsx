@@ -19,7 +19,7 @@ function EvidenceConnector() {
 
 export function EvidenceSection() {
   return (
-    <section className="bg-subtle">
+    <section className="border-t border-ink/15 bg-subtle">
       <Container className="py-16 md:py-24">
         <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
           <FadeIn className="md:sticky md:top-28 md:self-start">

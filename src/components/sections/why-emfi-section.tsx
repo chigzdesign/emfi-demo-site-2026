@@ -9,7 +9,7 @@ const whyIcons = [Compass, MessageCircle, ShieldCheck];
 
 export function WhyEmfiSection() {
   return (
-    <section className="bg-page">
+    <section className="bg-subtle">
       <Container className="py-12 md:py-20">
         <FadeIn className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
