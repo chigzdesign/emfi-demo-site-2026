@@ -6,7 +6,7 @@ import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { FadeIn, FadeInOnLoad } from "@/components/motion/fade-in";
-import { HeroInfrastructureGraphic } from "@/components/sections/hero-infrastructure-graphic";
+import { HeroLayersGraphic } from "@/components/sections/hero-layers-graphic";
 import { RelationshipChain } from "@/components/sections/relationship-chain";
 import { HeroAtmosphere2 } from "@/components/sections/hero-atmosphere2";
 import { PlatformSection } from "@/components/sections/platform-section";
@@ -60,7 +60,7 @@ export default function HomePage() {
             </div>
 
             <FadeInOnLoad delay={0.18}>
-              <HeroInfrastructureGraphic />
+              <HeroLayersGraphic />
             </FadeInOnLoad>
           </div>
         </Container>
