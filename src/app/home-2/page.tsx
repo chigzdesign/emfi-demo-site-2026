@@ -10,11 +10,10 @@ import { HeroInfrastructureGraphic } from "@/components/sections/hero-infrastruc
 import { RelationshipChain } from "@/components/sections/relationship-chain";
 import { HeroAtmosphere2 } from "@/components/sections/hero-atmosphere2";
 import { PlatformSection } from "@/components/sections/platform-section";
-import { WhyEmfiSection } from "@/components/sections/why-emfi-section";
-import { EvidenceSection } from "@/components/sections/evidence-section";
+import { WhyEmfiSectionAlt } from "@/components/sections/why-emfi-section-alt";
+import { EvidenceSectionAlt } from "@/components/sections/evidence-section-alt";
 import { WhoWeServeSection } from "@/components/sections/who-we-serve-section";
-import { DecadeSection } from "@/components/sections/decade-section";
-import { ClientPerspectiveSection } from "@/components/sections/client-perspective-section";
+import { DecadeSectionAlt } from "@/components/sections/decade-section-alt";
 import { GlobalPresenceSection } from "@/components/sections/global-presence-section";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 
@@ -67,7 +66,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <RelationshipChain />
+      <RelationshipChain showGlobe={false} />
 
       <section>
         <Container className="py-12 md:py-28">
@@ -153,14 +152,13 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <WhyEmfiSection />
+      <WhyEmfiSectionAlt />
 
-      <EvidenceSection />
+      <EvidenceSectionAlt />
 
       <WhoWeServeSection />
       <PlatformSection />
-      <DecadeSection />
-
+      <DecadeSectionAlt />
 
       <GlobalPresenceSection />
 

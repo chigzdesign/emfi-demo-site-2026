@@ -20,22 +20,56 @@ function ChainConnector({ delay = 0 }: { delay?: number }) {
 }
 
 
-export function RelationshipChain() {
+export function RelationshipChain({
+  showGlobe = true,
+}: {
+  showGlobe?: boolean;
+}) {
   const segments = home.chainTitle.split("→").map((segment) => segment.trim());
   const lead = segments.slice(0, -1);
   const infraWords = home.chainInfra.map((item) => item.name);
 
   return (
     <section className="relative overflow-hidden bg-inverse">
-      <div className="absolute inset-0" aria-hidden>
-        <Image
-          src="/globle-img.png"
-          alt=""
-          fill
-          className="emfi-globe-photo object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-inverse via-inverse/55 to-inverse/10" />
-      </div>
+      {showGlobe ? (
+        <div className="absolute inset-0" aria-hidden>
+          <Image
+            src="/globle-img.png"
+            alt=""
+            fill
+            className="emfi-globe-photo object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-inverse via-inverse/55 to-inverse/10" />
+        </div>
+      ) : (
+        <>
+          <span
+            aria-hidden
+            className="emfi-cta-band-glow pointer-events-none absolute left-[-10%] top-[15%] h-[380px] w-[380px] rounded-full opacity-0 blur-[100px] md:h-[560px] md:w-[560px]"
+            style={{ background: "var(--color-blue-100)" }}
+          />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute -bottom-[30%] right-[-10%] h-[360px] w-[360px] rounded-full opacity-10 blur-[110px]"
+            style={{ background: "var(--color-blue-50)" }}
+          />
+          <span
+            aria-hidden
+            className="emfi-cta-band-glow pointer-events-none absolute right-[-15%] top-[-10%] h-[320px] w-[320px] rounded-full opacity-0 blur-[100px] md:h-[440px] md:w-[440px]"
+            style={{ background: "var(--color-blue-200)", animationDelay: "-4s" }}
+          />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute -top-[20%] left-[30%] h-[300px] w-[300px] rounded-full opacity-[0.06] blur-[120px]"
+            style={{ background: "var(--color-blue-50)" }}
+          />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute bottom-[-15%] left-[10%] h-[260px] w-[260px] rounded-full opacity-10 blur-[100px]"
+            style={{ background: "var(--color-blue-100)" }}
+          />
+        </>
+      )}
 
       <Container className="relative z-10 py-16 md:py-28">
         <FadeIn className="flex flex-col items-center text-center">

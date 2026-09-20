@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node scratch-debug3.mjs)"
+      "Bash(node scratch-debug3.mjs)",
+      "Bash(rm -f /tmp/home2-decade2.png)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp"
     ]
   }
 }

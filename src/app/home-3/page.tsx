@@ -6,15 +6,14 @@ import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { FadeIn, FadeInOnLoad } from "@/components/motion/fade-in";
-import { HeroInfrastructureGraphic } from "@/components/sections/hero-infrastructure-graphic";
+import { HeroFlowGraphic } from "@/components/sections/hero-flow-graphic";
 import { RelationshipChain } from "@/components/sections/relationship-chain";
 import { HeroAtmosphere2 } from "@/components/sections/hero-atmosphere2";
 import { PlatformSection } from "@/components/sections/platform-section";
-import { WhyEmfiSection } from "@/components/sections/why-emfi-section";
-import { EvidenceSection } from "@/components/sections/evidence-section";
+import { WhyEmfiSectionAlt } from "@/components/sections/why-emfi-section-alt";
+import { EvidenceSectionAlt } from "@/components/sections/evidence-section-alt";
 import { WhoWeServeSection } from "@/components/sections/who-we-serve-section";
-import { DecadeSection } from "@/components/sections/decade-section";
-import { ClientPerspectiveSection } from "@/components/sections/client-perspective-section";
+import { DecadeSectionAlt } from "@/components/sections/decade-section-alt";
 import { GlobalPresenceSection } from "@/components/sections/global-presence-section";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 
@@ -61,13 +60,13 @@ export default function HomePage() {
             </div>
 
             <FadeInOnLoad delay={0.18}>
-              <HeroInfrastructureGraphic />
+              <HeroFlowGraphic />
             </FadeInOnLoad>
           </div>
         </Container>
       </section>
 
-      <RelationshipChain />
+      <RelationshipChain showGlobe={false} />
 
       <section>
         <Container className="py-12 md:py-28">
@@ -153,14 +152,13 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <WhyEmfiSection />
+      <WhyEmfiSectionAlt />
 
-      <EvidenceSection />
+      <EvidenceSectionAlt />
 
       <WhoWeServeSection />
       <PlatformSection />
-      <DecadeSection />
-
+      <DecadeSectionAlt />
 
       <GlobalPresenceSection />
 
